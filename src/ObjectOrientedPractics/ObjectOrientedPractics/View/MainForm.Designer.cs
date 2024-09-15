@@ -28,13 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            itemsTab1 = new View.Tabs.ItemsTab();
             SuspendLayout();
+            // 
+            // itemsTab1
+            // 
+            itemsTab1.Dock = DockStyle.Fill;
+            itemsTab1.Font = new Font("Bahnschrift SemiCondensed", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            itemsTab1.Location = new Point(0, 0);
+            itemsTab1.Margin = new Padding(1, 1, 1, 1);
+            itemsTab1.Name = "itemsTab1";
+            itemsTab1.Size = new Size(484, 496);
+            itemsTab1.TabIndex = 0;
+            itemsTab1.Load += itemsTab1_Load;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 33F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(484, 496);
+            Controls.Add(itemsTab1);
+            Font = new Font("Bahnschrift SemiCondensed", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            Margin = new Padding(5, 7, 5, 7);
             Name = "MainForm";
             Text = "Form1";
             Load += MainForm_Load;
@@ -42,5 +57,7 @@
         }
 
         #endregion
+
+        private View.Tabs.ItemsTab itemsTab1;
     }
 }
