@@ -7,7 +7,7 @@ namespace ObjectOrientedPractics
         private readonly int _id;
         private string _name;
         private string _info;
-        private double _cost;
+        private float _cost;
 
         public int Id
         {
@@ -29,7 +29,7 @@ namespace ObjectOrientedPractics
         }
         [Required]
         [Range(0,100000)]
-        public double Cost
+        public float Cost
         { 
             get { return _cost; } 
             set { _cost = value; }
