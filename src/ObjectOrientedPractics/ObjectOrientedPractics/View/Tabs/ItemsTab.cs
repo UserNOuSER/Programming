@@ -12,9 +12,11 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class ItemsTab : UserControl
     {
+        private List<Item> _items = new();
         public ItemsTab()
         {
             InitializeComponent();
+
         }
 
         private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
@@ -98,6 +100,36 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ItemsTab_Load(object sender, EventArgs e)
         {
 
         }

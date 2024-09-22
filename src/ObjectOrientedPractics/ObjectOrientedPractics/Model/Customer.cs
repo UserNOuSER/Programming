@@ -12,19 +12,22 @@ namespace ObjectOrientedPractics
             get { return _id; } 
         }
         [Required]
-        [StringLength(200)]
         public string Fullname
         {
             get { return _fullname; }
-            set { _fullname = value; }
+            set { _fullname = ValueValidator.AssertStringOnLenght(value, 200, "Fullname"); }
         }
         [Required]
-        [StringLength(500)]
         public string Address
         { 
             get { return _address; } 
-            set { _address = value; } 
+            set { _address = ValueValidator.AssertStringOnLenght(value, 500, "Address"); } 
         }
-
+        public Customer(string fullname, string address)
+        {
+            int Id = IDGenerator.GetNextId();
+            Fullname = fullname;
+            Address = address;
+        }
     }
 }

@@ -14,18 +14,16 @@ namespace ObjectOrientedPractics
             get { return _id; }
         }
         [Required]
-        [StringLength(200)]
         public string Name
         {
             get { return _name; } 
-            set { _name = value; }
+            set { _name = ValueValidator.AssertStringOnLenght(value, 200, "Name"); }
         }
         [Required]
-        [StringLength(1000)]
         public string Info
         { 
             get { return _info; } 
-            set { _info = value; }
+            set { _info = ValueValidator.AssertStringOnLenght(value, 1000, "Info"); }
         }
         [Required]
         [Range(0,100000)]
@@ -33,6 +31,14 @@ namespace ObjectOrientedPractics
         { 
             get { return _cost; } 
             set { _cost = value; }
+        }
+
+        public Item(string name, string info, float cost)
+        {
+            int Id = IDGenerator.GetNextId();
+            Name = name;  
+            Info = info;
+            Cost = cost;
         }
     }
 }

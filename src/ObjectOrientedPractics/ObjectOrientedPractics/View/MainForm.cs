@@ -16,5 +16,15 @@ namespace ObjectOrientedPractics
         {
 
         }
+
+        private void itemsTab1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void itemsTab1_Load_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
