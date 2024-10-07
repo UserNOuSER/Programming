@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ObjectOrientedPractics
+﻿namespace ObjectOrientedPractics
 {
     internal class Item
     {
@@ -13,32 +11,60 @@ namespace ObjectOrientedPractics
         {
             get { return _id; }
         }
-        [Required]
         public string Name
         {
             get { return _name; } 
-            set { _name = ValueValidator.AssertStringOnLenght(value, 200, "Name"); }
+            set 
+            { 
+                ValueValidator.AssertStringOnLenght(value, 200, nameof(Name));
+                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Name)); 
+                _name = value;
+            }
         }
-        [Required]
         public string Info
         { 
             get { return _info; } 
-            set { _info = ValueValidator.AssertStringOnLenght(value, 1000, "Info"); }
+            set 
+            {
+                ValueValidator.AssertStringOnLenght(value, 1000, nameof(Info));
+                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Info));
+                _info = value;
+            }
         }
-        [Required]
-        [Range(0,100000)]
+        
         public float Cost
         { 
             get { return _cost; } 
-            set { _cost = value; }
+            set 
+            {   
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("cost should be >= 0");
+                }
+                if (value > 100000)
+                {
+                    throw new ArgumentOutOfRangeException("cost should be <= 100000");
+                }
+                _cost = value; 
+            }
+        }
+
+        public Item()
+        {
+            _id = IDGenerator.GetNextId();
+            Name = "name";
+            Info = "info";
+            Cost = 0;
         }
 
         public Item(string name, string info, float cost)
         {
-            int Id = IDGenerator.GetNextId();
+            _id = IDGenerator.GetNextId();  
             Name = name;  
             Info = info;
             Cost = cost;
         }
+        public override string ToString() => _name;
     }
+    
 }

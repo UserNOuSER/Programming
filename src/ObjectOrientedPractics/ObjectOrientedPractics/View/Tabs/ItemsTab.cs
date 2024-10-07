@@ -1,136 +1,112 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class ItemsTab : UserControl
     {
         private List<Item> _items = new();
+
+        private Item _currentItem;
+
+        bool _isDataCorrect = true;
+
         public ItemsTab()
         {
             InitializeComponent();
 
         }
 
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
+        private void ItemsTab_Load(object sender, EventArgs e)
         {
+            _items.Add(ItemFactory.GetItem()); /// generatoin of 4 elements(test)
+            _items.Add(ItemFactory.GetItem());
+            _items.Add(ItemFactory.GetItem());
+            _items.Add(ItemFactory.GetItem());
+            ItemsListBox.DataSource = _items;
+            ItemsListBox.SelectedIndex = 0;
+        }
+
+        private void ItemListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ItemsListBox.SelectedItem is null) { return; }
+            if (!_isDataCorrect)
+            {
+                ItemsListBox.SelectedItem = _currentItem;
+                return;
+            }
+            _currentItem = (Item)ItemsListBox.SelectedItem;
+
+            IDTextBox.Text = _currentItem.Id.ToString();
+            CostTextBox.Text = _currentItem.Cost.ToString();
+            NameTextBox.Text = _currentItem.Name;
+            InfoTextBox.Text = _currentItem.Info;
+
+            ItemsListBox.DataSource = null;
+            ItemsListBox.DataSource = _items;
+        }
+
+        private void ItemListBox_Click(object sender, EventArgs e)
+        {
+            _isDataCorrect = true;
+            CostTextBox.BackColor = Color.White;
+            NameTextBox.BackColor = Color.White;
+            InfoTextBox.BackColor = Color.White;
+
+            try
+            {
+                float cost = float.Parse(CostTextBox.Text);
+                _currentItem.Cost = cost;
+            }
+            catch (Exception)
+            {
+                CostTextBox.BackColor = Color.Tomato;
+                _isDataCorrect = false;
+            }
+            try
+            {
+                string name = NameTextBox.Text;
+                _currentItem.Name = name;
+            }
+            catch (Exception)
+            {
+                NameTextBox.BackColor = Color.Tomato;
+                _isDataCorrect = false;
+            }
+            try
+            {
+                string info = InfoTextBox.Text;
+                _currentItem.Info = info;
+            }
+            catch (Exception)
+            {
+                InfoTextBox.BackColor = Color.Tomato;
+                _isDataCorrect = false;
+            }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
+            Item newItem = new();
+            _items.Add(newItem);
+            ItemsListBox.DataSource = null;
+            ItemsListBox.DataSource = _items;
 
         }
 
-        private void splitContainer3_SplitterMoved(object sender, SplitterEventArgs e)
+        private void RemoveButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            _items.Remove(_currentItem);
+            ItemsListBox.DataSource = null;
+            ItemsListBox.DataSource = _items;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer9_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ItemsTab_Load(object sender, EventArgs e)
-        {
+            Item newItem = ItemFactory.GetItem();
+            _items.Add(newItem);
+            ItemsListBox.DataSource = null;
+            ItemsListBox.DataSource = _items;
 
         }
     }

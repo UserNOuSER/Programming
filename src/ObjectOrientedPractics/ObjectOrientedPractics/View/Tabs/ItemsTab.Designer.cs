@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             ItemsLabel1 = new Label();
-            ItemListBox = new ListBox();
+            ItemsListBox = new ListBox();
             AddButton = new Button();
             RemoveButton = new Button();
             SelectedItemLabel = new Label();
@@ -40,151 +40,172 @@
             ItemsLabel2 = new Label();
             NameTextBox = new TextBox();
             DescriptionLabel = new Label();
-            DescriptionTextBox = new TextBox();
+            InfoTextBox = new TextBox();
+            AddRandomButton = new Button();
             SuspendLayout();
             // 
             // ItemsLabel1
             // 
             ItemsLabel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ItemsLabel1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            ItemsLabel1.Location = new Point(3, 9);
-            ItemsLabel1.MaximumSize = new Size(50, 20);
-            ItemsLabel1.MinimumSize = new Size(50, 20);
+            ItemsLabel1.Location = new Point(3, 7);
+            ItemsLabel1.MaximumSize = new Size(44, 15);
+            ItemsLabel1.MinimumSize = new Size(44, 15);
             ItemsLabel1.Name = "ItemsLabel1";
-            ItemsLabel1.Size = new Size(50, 20);
+            ItemsLabel1.Size = new Size(44, 15);
             ItemsLabel1.TabIndex = 0;
             ItemsLabel1.Text = "ltems";
-            ItemsLabel1.Click += label1_Click_1;
             // 
-            // ItemListBox
+            // ItemsListBox
             // 
-            ItemListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ItemListBox.FormattingEnabled = true;
-            ItemListBox.Location = new Point(3, 32);
-            ItemListBox.MaximumSize = new Size(261, 9999);
-            ItemListBox.MinimumSize = new Size(261, 0);
-            ItemListBox.Name = "ItemListBox";
-            ItemListBox.Size = new Size(261, 464);
-            ItemListBox.TabIndex = 1;
-            ItemListBox.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            ItemsListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ItemsListBox.DataSource = ItemsListBox.CustomTabOffsets;
+            ItemsListBox.FormattingEnabled = true;
+            ItemsListBox.ItemHeight = 15;
+            ItemsListBox.Location = new Point(3, 24);
+            ItemsListBox.Margin = new Padding(3, 2, 3, 2);
+            ItemsListBox.MaximumSize = new Size(229, 7500);
+            ItemsListBox.MinimumSize = new Size(229, 4);
+            ItemsListBox.Name = "ItemsListBox";
+            ItemsListBox.Size = new Size(229, 319);
+            ItemsListBox.TabIndex = 1;
+            ItemsListBox.Click += ItemListBox_Click;
+            ItemsListBox.SelectedIndexChanged += ItemListBox_SelectedIndexChanged;
             // 
             // AddButton
             // 
             AddButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            AddButton.Location = new Point(3, 502);
+            AddButton.Location = new Point(3, 345);
+            AddButton.Margin = new Padding(3, 2, 3, 2);
             AddButton.Name = "AddButton";
-            AddButton.Size = new Size(124, 64);
+            AddButton.Size = new Size(67, 48);
             AddButton.TabIndex = 2;
             AddButton.Text = "Add";
             AddButton.UseVisualStyleBackColor = true;
+            AddButton.Click += AddButton_Click;
             // 
             // RemoveButton
             // 
             RemoveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            RemoveButton.Location = new Point(140, 502);
+            RemoveButton.Location = new Point(165, 345);
+            RemoveButton.Margin = new Padding(3, 2, 3, 2);
             RemoveButton.Name = "RemoveButton";
-            RemoveButton.Size = new Size(124, 64);
+            RemoveButton.Size = new Size(67, 48);
             RemoveButton.TabIndex = 3;
             RemoveButton.Text = "Remove";
             RemoveButton.UseVisualStyleBackColor = true;
+            RemoveButton.Click += RemoveButton_Click;
             // 
             // SelectedItemLabel
             // 
             SelectedItemLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            SelectedItemLabel.Location = new Point(274, 9);
+            SelectedItemLabel.Location = new Point(240, 7);
             SelectedItemLabel.Name = "SelectedItemLabel";
-            SelectedItemLabel.Size = new Size(118, 20);
+            SelectedItemLabel.Size = new Size(103, 15);
             SelectedItemLabel.TabIndex = 4;
             SelectedItemLabel.Text = "Selected Item";
-            SelectedItemLabel.Click += label2_Click_1;
             // 
             // IDLabel
             // 
             IDLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            IDLabel.Location = new Point(274, 36);
-            IDLabel.MaximumSize = new Size(50, 20);
-            IDLabel.MinimumSize = new Size(50, 20);
+            IDLabel.Location = new Point(240, 27);
+            IDLabel.MaximumSize = new Size(44, 15);
+            IDLabel.MinimumSize = new Size(44, 15);
             IDLabel.Name = "IDLabel";
-            IDLabel.Size = new Size(50, 20);
+            IDLabel.Size = new Size(44, 15);
             IDLabel.TabIndex = 5;
             IDLabel.Text = "ID:";
             // 
             // CostLabel
             // 
             CostLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            CostLabel.Location = new Point(274, 70);
-            CostLabel.MaximumSize = new Size(50, 20);
-            CostLabel.MinimumSize = new Size(50, 20);
+            CostLabel.Location = new Point(240, 52);
+            CostLabel.MaximumSize = new Size(44, 15);
+            CostLabel.MinimumSize = new Size(44, 15);
             CostLabel.Name = "CostLabel";
-            CostLabel.Size = new Size(50, 20);
+            CostLabel.Size = new Size(44, 15);
             CostLabel.TabIndex = 6;
             CostLabel.Text = "Cost:";
             // 
             // IDTextBox
             // 
             IDTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            IDTextBox.Location = new Point(344, 33);
+            IDTextBox.Location = new Point(301, 25);
+            IDTextBox.Margin = new Padding(3, 2, 3, 2);
             IDTextBox.Name = "IDTextBox";
             IDTextBox.ReadOnly = true;
-            IDTextBox.Size = new Size(499, 27);
+            IDTextBox.Size = new Size(316, 23);
             IDTextBox.TabIndex = 7;
             // 
             // CostTextBox
             // 
             CostTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            CostTextBox.Location = new Point(344, 67);
+            CostTextBox.Location = new Point(301, 50);
+            CostTextBox.Margin = new Padding(3, 2, 3, 2);
             CostTextBox.Name = "CostTextBox";
-            CostTextBox.Size = new Size(499, 27);
+            CostTextBox.Size = new Size(316, 23);
             CostTextBox.TabIndex = 8;
             // 
             // ItemsLabel2
             // 
             ItemsLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ItemsLabel2.Location = new Point(274, 106);
-            ItemsLabel2.MaximumSize = new Size(52, 20);
-            ItemsLabel2.MinimumSize = new Size(52, 20);
+            ItemsLabel2.Location = new Point(240, 80);
+            ItemsLabel2.MaximumSize = new Size(46, 15);
+            ItemsLabel2.MinimumSize = new Size(46, 15);
             ItemsLabel2.Name = "ItemsLabel2";
-            ItemsLabel2.Size = new Size(52, 20);
+            ItemsLabel2.Size = new Size(46, 15);
             ItemsLabel2.TabIndex = 9;
             ItemsLabel2.Text = "Name:";
-            ItemsLabel2.Click += label5_Click;
             // 
             // NameTextBox
             // 
             NameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            NameTextBox.Location = new Point(274, 129);
+            NameTextBox.Location = new Point(240, 97);
+            NameTextBox.Margin = new Padding(3, 2, 3, 2);
             NameTextBox.Multiline = true;
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(569, 149);
+            NameTextBox.Size = new Size(378, 113);
             NameTextBox.TabIndex = 10;
             // 
             // DescriptionLabel
             // 
             DescriptionLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            DescriptionLabel.Location = new Point(274, 281);
-            DescriptionLabel.MaximumSize = new Size(88, 20);
-            DescriptionLabel.MinimumSize = new Size(88, 20);
+            DescriptionLabel.Location = new Point(240, 211);
+            DescriptionLabel.MaximumSize = new Size(77, 15);
+            DescriptionLabel.MinimumSize = new Size(77, 15);
             DescriptionLabel.Name = "DescriptionLabel";
             DescriptionLabel.RightToLeft = RightToLeft.No;
-            DescriptionLabel.Size = new Size(88, 20);
+            DescriptionLabel.Size = new Size(77, 15);
             DescriptionLabel.TabIndex = 11;
             DescriptionLabel.Text = "Description:";
-            DescriptionLabel.Click += label6_Click;
             // 
-            // DescriptionTextBox
+            // InfoTextBox
             // 
-            DescriptionTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            DescriptionTextBox.Location = new Point(274, 304);
-            DescriptionTextBox.Multiline = true;
-            DescriptionTextBox.Name = "DescriptionTextBox";
-            DescriptionTextBox.Size = new Size(569, 192);
-            DescriptionTextBox.TabIndex = 12;
+            InfoTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            InfoTextBox.Location = new Point(242, 228);
+            InfoTextBox.Margin = new Padding(3, 2, 3, 2);
+            InfoTextBox.Multiline = true;
+            InfoTextBox.Name = "InfoTextBox";
+            InfoTextBox.Size = new Size(378, 113);
+            InfoTextBox.TabIndex = 12;
+            // 
+            // AddRandomButton
+            // 
+            AddRandomButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            AddRandomButton.Location = new Point(76, 345);
+            AddRandomButton.Name = "AddRandomButton";
+            AddRandomButton.Size = new Size(83, 48);
+            AddRandomButton.TabIndex = 13;
+            AddRandomButton.Text = "AddRandom";
+            AddRandomButton.UseVisualStyleBackColor = true;
+            AddRandomButton.Click += button1_Click;
             // 
             // ItemsTab
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(DescriptionTextBox);
+            Controls.Add(AddRandomButton);
+            Controls.Add(InfoTextBox);
             Controls.Add(DescriptionLabel);
             Controls.Add(ItemsLabel2);
             Controls.Add(CostTextBox);
@@ -194,11 +215,12 @@
             Controls.Add(SelectedItemLabel);
             Controls.Add(RemoveButton);
             Controls.Add(AddButton);
-            Controls.Add(ItemListBox);
+            Controls.Add(ItemsListBox);
             Controls.Add(ItemsLabel1);
             Controls.Add(NameTextBox);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ItemsTab";
-            Size = new Size(846, 566);
+            Size = new Size(620, 395);
             Load += ItemsTab_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -207,7 +229,7 @@
         #endregion
 
         private Label ItemsLabel1;
-        private ListBox ItemListBox;
+        private ListBox ItemsListBox;
         private Button AddButton;
         private Button RemoveButton;
         private Label SelectedItemLabel;
@@ -218,6 +240,7 @@
         private Label ItemsLabel2;
         private TextBox NameTextBox;
         private Label DescriptionLabel;
-        private TextBox DescriptionTextBox;
+        private TextBox InfoTextBox;
+        private Button AddRandomButton;
     }
 }

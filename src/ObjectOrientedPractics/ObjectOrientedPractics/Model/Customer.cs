@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ObjectOrientedPractics
+﻿namespace ObjectOrientedPractics
 {
     internal class Customer
     {
@@ -11,23 +9,39 @@ namespace ObjectOrientedPractics
         { 
             get { return _id; } 
         }
-        [Required]
         public string Fullname
         {
             get { return _fullname; }
-            set { _fullname = ValueValidator.AssertStringOnLenght(value, 200, "Fullname"); }
+            set 
+            {
+                ValueValidator.AssertStringOnLenght(value, 200, nameof(Fullname)); 
+                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Fullname));
+                _fullname = value;
+            }
         }
-        [Required]
         public string Address
         { 
             get { return _address; } 
-            set { _address = ValueValidator.AssertStringOnLenght(value, 500, "Address"); } 
+            set 
+            {
+                ValueValidator.AssertStringOnLenght(value, 500, nameof(Address));
+                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Address));
+                _address = value;
+            } 
         }
+        public Customer()
+        {  
+            _id = IDGenerator.GetNextId();
+            Fullname = "Fullname";
+            Address = "Address";
+        }
+
         public Customer(string fullname, string address)
         {
-            int Id = IDGenerator.GetNextId();
+            _id = IDGenerator.GetNextId();
             Fullname = fullname;
             Address = address;
         }
+        public override string ToString() => _fullname;
     }
 }

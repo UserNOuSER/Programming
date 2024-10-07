@@ -2,13 +2,19 @@
 { 
     internal class ValueValidator
     {
-        public static string AssertStringOnLenght(string value, int MaxLenght, string propertyName)
+        public static void AssertStringOnLenght(string value, int MaxLenght, string propertyName)
         {
-            if (value.Length < MaxLenght)
+            if (value.Length > MaxLenght)
             {
-                throw new ArgumentException(propertyName + "должен быть меньше" + MaxLenght.ToString()+ "символов.");
+                throw new ArgumentException(propertyName + " должен быть меньше " + MaxLenght.ToString() + " символов.");
             }
-            return value;
+        }
+        public static void CheckStringOnNullOrEmpty(string str, string propertyName)
+        {
+            if (String.IsNullOrEmpty(str))
+            {
+                throw new ArgumentNullException("свойство " + propertyName + " не должно быть null или пустым");
+            }
         }
     }
 }

@@ -53,10 +53,10 @@
             // tabPage1
             // 
             tabPage1.Controls.Add(itemsTab1);
-            tabPage1.Location = new Point(4, 25);
+            tabPage1.Location = new Point(4, 21);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1071, 550);
+            tabPage1.Size = new Size(1071, 554);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Item Tab";
             tabPage1.UseVisualStyleBackColor = true;
@@ -65,18 +65,19 @@
             // 
             itemsTab1.Dock = DockStyle.Fill;
             itemsTab1.Location = new Point(3, 3);
+            itemsTab1.Margin = new Padding(3, 2, 3, 2);
             itemsTab1.Name = "itemsTab1";
-            itemsTab1.Size = new Size(1065, 544);
+            itemsTab1.Size = new Size(1065, 548);
             itemsTab1.TabIndex = 0;
             itemsTab1.Load += itemsTab1_Load_2;
             // 
             // tabPage2
             // 
             tabPage2.Controls.Add(customersTab1);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 21);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1071, 546);
+            tabPage2.Size = new Size(1071, 554);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Customer Tab";
             tabPage2.UseVisualStyleBackColor = true;
@@ -85,13 +86,14 @@
             // 
             customersTab1.Dock = DockStyle.Fill;
             customersTab1.Location = new Point(3, 3);
+            customersTab1.Margin = new Padding(3, 2, 3, 2);
             customersTab1.Name = "customersTab1";
-            customersTab1.Size = new Size(1065, 540);
+            customersTab1.Size = new Size(1065, 548);
             customersTab1.TabIndex = 0;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(6F, 16F);
+            AutoScaleDimensions = new SizeF(5F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1079, 579);
             Controls.Add(tabControl1);
