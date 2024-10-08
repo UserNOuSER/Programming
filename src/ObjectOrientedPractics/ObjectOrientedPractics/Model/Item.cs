@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.Model;
+
+namespace ObjectOrientedPractics
 {
     /// <summary>
     /// Хранит данные о товаре.
@@ -29,6 +31,10 @@
         {
             get { return _id; }
         }
+        /// <summary>
+        /// Возвращает и задает категорию товара.
+        /// </summary>
+        public Category Category { get; set; }
 
         /// <summary>
         /// Возвращает и задает название товара. Должно быть непустым и короче 200 символов.
@@ -69,6 +75,7 @@
                 _cost = value; 
             }
         }
+
         /// <summary>
         /// Создаёт пустой экземпляр класса <see cref="Item"/>.
         /// </summary>
@@ -76,12 +83,14 @@
         /// <param name="Info">Описание товара. По умолчанию - "info".</param>
         /// <param name="Cost">Цена товара. По умолчанию - 0.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
+        /// <param name="Category">Категория товара. По умолчанию - Здоровье.</param>
         public Item()
         {
             _id = IDGenerator.GetNextId();
             Name = "name";
             Info = "info";
             Cost = 0;
+            Category = Category.Здоровье;
         }
         /// <summary>
         /// Создаёт экземпляр класса <see cref="Item"/>.
@@ -90,12 +99,14 @@
         /// <param name="Info">Описание товара. Должно быть непустым и короче 1000 символов.</param>
         /// <param name="Cost">Цена товара. Должна быть больше нуля и менее 100000.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
-        public Item(string name, string info, float cost)
+        /// <param name="Category">Категория товара.</param>
+        public Item(string name, string info, float cost, Category category)
         {
             _id = IDGenerator.GetNextId();  
             Name = name;  
             Info = info;
             Cost = cost;
+            Category = category;
         }
         /// <summary>
         /// Возвращает имя товара

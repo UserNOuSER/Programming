@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using ObjectOrientedPractics.Model;
 
 namespace ObjectOrientedPractics.Services
 {
@@ -14,9 +15,11 @@ namespace ObjectOrientedPractics.Services
         public static Item GetItem() 
         {
             var fakerRu = new Faker("ru");
+            var faker = new Faker();
             Item item = new(fakerRu.Commerce.Product().ToString(),
                             fakerRu.Commerce.ProductDescription().ToString(),
-                            float.Parse(fakerRu.Commerce.Price(0, 100000)));
+                            float.Parse(faker.Commerce.Price(0, 100000)),
+                            faker.PickRandom<Category>());
 
             return item;
         }

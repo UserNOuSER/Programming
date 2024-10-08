@@ -42,6 +42,8 @@
             DescriptionLabel = new Label();
             InfoTextBox = new TextBox();
             AddRandomButton = new Button();
+            label1 = new Label();
+            CategoryComboBox = new ComboBox();
             SuspendLayout();
             // 
             // ItemsLabel1
@@ -149,22 +151,22 @@
             // ItemsLabel2
             // 
             ItemsLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            ItemsLabel2.Location = new Point(240, 80);
+            ItemsLabel2.Location = new Point(240, 101);
             ItemsLabel2.MaximumSize = new Size(46, 15);
             ItemsLabel2.MinimumSize = new Size(46, 15);
             ItemsLabel2.Name = "ItemsLabel2";
             ItemsLabel2.Size = new Size(46, 15);
             ItemsLabel2.TabIndex = 9;
             ItemsLabel2.Text = "Name:";
-            // 
+            //
             // NameTextBox
             // 
             NameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            NameTextBox.Location = new Point(240, 97);
+            NameTextBox.Location = new Point(240, 118);
             NameTextBox.Margin = new Padding(3, 2, 3, 2);
             NameTextBox.Multiline = true;
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(378, 113);
+            NameTextBox.Size = new Size(378, 92);
             NameTextBox.TabIndex = 10;
             // 
             // DescriptionLabel
@@ -200,10 +202,31 @@
             AddRandomButton.UseVisualStyleBackColor = true;
             AddRandomButton.Click += AddRandomButton_Click;
             // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.Location = new Point(240, 78);
+            label1.MaximumSize = new Size(61, 17);
+            label1.MinimumSize = new Size(61, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(61, 17);
+            label1.TabIndex = 14;
+            label1.Text = "Category:";
+            // 
+            // CategoryComboBox
+            // 
+            CategoryComboBox.FormattingEnabled = true;
+            CategoryComboBox.Location = new Point(301, 78);
+            CategoryComboBox.Name = "CategoryComboBox";
+            CategoryComboBox.Size = new Size(121, 23);
+            CategoryComboBox.TabIndex = 15;
+            // 
             // ItemsTab
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(CategoryComboBox);
+            Controls.Add(label1);
             Controls.Add(AddRandomButton);
             Controls.Add(InfoTextBox);
             Controls.Add(DescriptionLabel);
@@ -242,5 +265,7 @@
         private Label DescriptionLabel;
         private TextBox InfoTextBox;
         private Button AddRandomButton;
+        private Label label1;
+        private ComboBox CategoryComboBox;
     }
 }

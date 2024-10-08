@@ -1,4 +1,5 @@
-﻿using ObjectOrientedPractics.Services;
+﻿using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -21,15 +22,18 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             InitializeComponent();
         }
+
         private void ItemsTab_Load(object sender, EventArgs e)
         {
-            _items.Add(ItemFactory.GetItem()); 
+            _items.Add(ItemFactory.GetItem());
             _items.Add(ItemFactory.GetItem());
             _items.Add(ItemFactory.GetItem());
             _items.Add(ItemFactory.GetItem());
             ItemsListBox.DataSource = _items;
             ItemsListBox.SelectedIndex = 0;
+            CategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
         }
+
         private void ItemListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ItemsListBox.SelectedItem is null) { return; }
@@ -44,13 +48,18 @@ namespace ObjectOrientedPractics.View.Tabs
             CostTextBox.Text = _currentItem.Cost.ToString();
             NameTextBox.Text = _currentItem.Name;
             InfoTextBox.Text = _currentItem.Info;
+            CategoryComboBox.SelectedItem = _currentItem.Category;
 
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;
         }
+
         private void ItemListBox_Click(object sender, EventArgs e)
         {
+            if (ItemsListBox.SelectedItem == null) { return; }
+
             _isDataCorrect = true;
+
             CostTextBox.BackColor = Color.White;
             NameTextBox.BackColor = Color.White;
             InfoTextBox.BackColor = Color.White;
@@ -85,6 +94,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 InfoTextBox.BackColor = Color.Tomato;
                 _isDataCorrect = false;
             }
+            _currentItem.Category = (Category)CategoryComboBox.SelectedItem;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -94,7 +104,6 @@ namespace ObjectOrientedPractics.View.Tabs
             _items.Add(newItem);
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;
-
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -110,7 +119,7 @@ namespace ObjectOrientedPractics.View.Tabs
             _items.Add(newItem);
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;
-
         }
+
     }
 }
