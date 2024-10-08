@@ -4,28 +4,32 @@ namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class ItemsTab : UserControl
     {
-        private List<Item> _items = new();
-
+        /// <summary>
+        /// Список для хранения товаров.
+        /// </summary>
+        private List<Item> _items = [];
+        /// <summary>
+        /// Текущий товар.
+        /// </summary>
         private Item _currentItem;
-
+        /// <summary>
+        /// Проверка данных: true - корректные, false - некорректные.
+        /// </summary>
         bool _isDataCorrect = true;
 
         public ItemsTab()
         {
             InitializeComponent();
-
         }
-
         private void ItemsTab_Load(object sender, EventArgs e)
         {
-            _items.Add(ItemFactory.GetItem()); /// generatoin of 4 elements(test)
+            _items.Add(ItemFactory.GetItem()); 
             _items.Add(ItemFactory.GetItem());
             _items.Add(ItemFactory.GetItem());
             _items.Add(ItemFactory.GetItem());
             ItemsListBox.DataSource = _items;
             ItemsListBox.SelectedIndex = 0;
         }
-
         private void ItemListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ItemsListBox.SelectedItem is null) { return; }
@@ -44,7 +48,6 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;
         }
-
         private void ItemListBox_Click(object sender, EventArgs e)
         {
             _isDataCorrect = true;
@@ -101,7 +104,7 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemsListBox.DataSource = _items;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddRandomButton_Click(object sender, EventArgs e)
         {
             Item newItem = ItemFactory.GetItem();
             _items.Add(newItem);

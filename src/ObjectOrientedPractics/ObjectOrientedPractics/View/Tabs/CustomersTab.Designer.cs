@@ -173,7 +173,7 @@
             AddRandomButton.TabIndex = 11;
             AddRandomButton.Text = "AddRandom";
             AddRandomButton.UseVisualStyleBackColor = true;
-            AddRandomButton.Click += button1_Click;
+            AddRandomButton.Click += AddRandomButton_Click;
             // 
             // CustomersTab
             // 

@@ -2,13 +2,20 @@
 
 namespace ObjectOrientedPractics.Services
 {
+    /// <summary>
+    /// Класс, создающий покупателя со случайными данными.
+    /// </summary>
     internal class CustomerFactory
     {
-        public static Customer GetCustomer() 
+        /// <summary>
+        /// Генерирует покупателя со случайными данными и возвращает его.
+        /// </summary>
+        /// <returns>Customer</returns>
+        public static Customer GenerateCustomer() 
         {
             var fakerRu = new Faker("ru");
-            Customer customer = new Customer(fakerRu.Name.FullName(),
-                                             fakerRu.Address.FullAddress());
+            Customer customer = new(fakerRu.Name.FullName(),
+                                    fakerRu.Address.FullAddress());
             return customer;
         }
     }

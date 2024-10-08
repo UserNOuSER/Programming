@@ -3,11 +3,18 @@
 namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class CustomersTab : UserControl
-    {
-        private List<Customer> _customers = new();
-
+    {   
+        /// <summary>
+        /// Список для хранения покупателей.
+        /// </summary>
+        private List<Customer> _customers = [];
+        /// <summary>
+        /// Текущий покупатель.
+        /// </summary>
         private Customer _currentCustomer;
-
+        /// <summary>
+        /// Проверка данных: true - корректные, false - некорректные.
+        /// </summary>
         bool _isDataCorrect = true;
         public CustomersTab()
         {
@@ -16,10 +23,10 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void CustomersTab_Load(object sender, EventArgs e)
         {
-            _customers.Add(CustomerFactory.GetCustomer());
-            _customers.Add(CustomerFactory.GetCustomer());
-            _customers.Add(CustomerFactory.GetCustomer());
-            _customers.Add(CustomerFactory.GetCustomer());
+            _customers.Add(CustomerFactory.GenerateCustomer());
+            _customers.Add(CustomerFactory.GenerateCustomer());
+            _customers.Add(CustomerFactory.GenerateCustomer());
+            _customers.Add(CustomerFactory.GenerateCustomer());
             CustomersListBox.DataSource = _customers;
             CustomersListBox.SelectedIndex = 0;
         }
@@ -86,9 +93,9 @@ namespace ObjectOrientedPractics.View.Tabs
             CustomersListBox.DataSource = _customers;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddRandomButton_Click(object sender, EventArgs e)
         {
-            Customer customer = CustomerFactory.GetCustomer();
+            Customer customer = CustomerFactory.GenerateCustomer();
             _customers.Add(customer);
             CustomersListBox.DataSource = null;
             CustomersListBox.DataSource = _customers;
