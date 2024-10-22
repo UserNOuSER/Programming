@@ -1,9 +1,7 @@
-﻿using ObjectOrientedPractics.Services;
-
-namespace ObjectOrientedPractics.View.Tabs
+﻿namespace ObjectOrientedPractics
 {
     public partial class CustomersTab : UserControl
-    {   
+    {
         /// <summary>
         /// Список для хранения покупателей.
         /// </summary>
@@ -11,7 +9,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Текущий покупатель.
         /// </summary>
-        private Customer _currentCustomer;
+        private Customer _currentCustomer = new();
         /// <summary>
         /// Проверка данных: true - корректные, false - некорректные.
         /// </summary>
@@ -23,27 +21,27 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void CustomersTab_Load(object sender, EventArgs e)
         {
-            _customers.Add(CustomerFactory.GenerateCustomer());
-            _customers.Add(CustomerFactory.GenerateCustomer());
-            _customers.Add(CustomerFactory.GenerateCustomer());
-            _customers.Add(CustomerFactory.GenerateCustomer());
+            _customers.Add(_currentCustomer);
             CustomersListBox.DataSource = _customers;
             CustomersListBox.SelectedIndex = 0;
         }
 
         private void CustomersListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CustomersListBox.SelectedItem is null) { return; }
+            Customer customer = CustomersListBox.SelectedItem as Customer;
+
+            if (customer is null) { return; }
             if (!_isDataCorrect)
             {
-                CustomersListBox.SelectedItem = _currentCustomer;
+                customer = _currentCustomer;
                 return;
             }
-            _currentCustomer = (Customer)CustomersListBox.SelectedItem;
+            _currentCustomer = customer;
 
             IDTextBox.Text = _currentCustomer.Id.ToString();
             FullnameTextBox.Text = _currentCustomer.Fullname.ToString();
-            AddressTextBox.Text = _currentCustomer.Address;
+            AddressControl1.Address = _currentCustomer.Address;
+
 
             CustomersListBox.DataSource = null;
             CustomersListBox.DataSource = _customers;
@@ -54,16 +52,13 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             _isDataCorrect = true;
             FullnameTextBox.BackColor = Color.White;
-            AddressTextBox.BackColor = Color.White;
 
-            try
+            if (AddressControl1.TryInputAddress())
             {
-                string address = AddressTextBox.Text;
-                _currentCustomer.Address = address;
+                _currentCustomer.Address = AddressControl1.Address;
             }
-            catch (Exception)
+            else
             {
-                AddressTextBox.BackColor = Color.Tomato;
                 _isDataCorrect = false;
             }
             try
@@ -76,6 +71,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 FullnameTextBox.BackColor = Color.Tomato;
                 _isDataCorrect = false;
             }
+
 
         }
         private void AddButton_Click(object sender, EventArgs e)

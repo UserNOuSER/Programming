@@ -1,7 +1,4 @@
-﻿using ObjectOrientedPractics.Model;
-using ObjectOrientedPractics.Services;
-
-namespace ObjectOrientedPractics.View.Tabs
+﻿namespace ObjectOrientedPractics
 {
     public partial class ItemsTab : UserControl
     {
@@ -12,7 +9,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Текущий товар.
         /// </summary>
-        private Item _currentItem;
+        private Item _currentItem = new();
         /// <summary>
         /// Проверка данных: true - корректные, false - некорректные.
         /// </summary>
@@ -25,12 +22,8 @@ namespace ObjectOrientedPractics.View.Tabs
 
         private void ItemsTab_Load(object sender, EventArgs e)
         {
-            _items.Add(ItemFactory.GetItem());
-            _items.Add(ItemFactory.GetItem());
-            _items.Add(ItemFactory.GetItem());
-            _items.Add(ItemFactory.GetItem());
+            _items.Add(_currentItem);
             ItemsListBox.DataSource = _items;
-            ItemsListBox.SelectedIndex = 0;
             CategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
         }
 
@@ -120,6 +113,5 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;
         }
-
     }
 }

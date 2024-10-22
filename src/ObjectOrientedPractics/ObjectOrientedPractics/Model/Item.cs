@@ -1,6 +1,4 @@
-﻿using ObjectOrientedPractics.Model;
-
-namespace ObjectOrientedPractics
+﻿namespace ObjectOrientedPractics
 {
     /// <summary>
     /// Хранит данные о товаре.

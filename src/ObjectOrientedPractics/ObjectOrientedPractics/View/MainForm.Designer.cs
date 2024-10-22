@@ -1,11 +1,13 @@
-﻿namespace ObjectOrientedPractics
+﻿using System.ComponentModel;
+
+namespace ObjectOrientedPractics
 {
     partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         ///  Clean up any resources being used.
@@ -28,12 +30,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            itemsTab1 = new View.Tabs.ItemsTab();
+            itemsTab1 = new ItemsTab();
             tabPage2 = new TabPage();
-            customersTab1 = new View.Tabs.CustomersTab();
+            customersTab1 = new CustomersTab();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -53,10 +55,10 @@
             // tabPage1
             // 
             tabPage1.Controls.Add(itemsTab1);
-            tabPage1.Location = new Point(4, 21);
+            tabPage1.Location = new Point(4, 25);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1071, 554);
+            tabPage1.Size = new Size(1071, 550);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Item Tab";
             tabPage1.UseVisualStyleBackColor = true;
@@ -67,17 +69,17 @@
             itemsTab1.Location = new Point(3, 3);
             itemsTab1.Margin = new Padding(3, 2, 3, 2);
             itemsTab1.Name = "itemsTab1";
-            itemsTab1.Size = new Size(1065, 548);
+            itemsTab1.Size = new Size(1065, 544);
             itemsTab1.TabIndex = 0;
             itemsTab1.Load += itemsTab1_Load_2;
             // 
             // tabPage2
             // 
             tabPage2.Controls.Add(customersTab1);
-            tabPage2.Location = new Point(4, 21);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1071, 554);
+            tabPage2.Size = new Size(1071, 546);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Customer Tab";
             tabPage2.UseVisualStyleBackColor = true;
@@ -88,19 +90,19 @@
             customersTab1.Location = new Point(3, 3);
             customersTab1.Margin = new Padding(3, 2, 3, 2);
             customersTab1.Name = "customersTab1";
-            customersTab1.Size = new Size(1065, 548);
+            customersTab1.Size = new Size(1065, 540);
             customersTab1.TabIndex = 0;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(5F, 12F);
+            AutoScaleDimensions = new SizeF(6F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1079, 579);
             Controls.Add(tabControl1);
             Font = new Font("Bahnschrift SemiCondensed", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
-            MinimumSize = new Size(503, 533);
+            MinimumSize = new Size(700, 533);
             Name = "MainForm";
             Text = "Object Oriented Practics";
             Load += MainForm_Load;
@@ -114,8 +116,8 @@
 
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private View.Tabs.ItemsTab itemsTab1;
+        private ItemsTab itemsTab1;
         private TabPage tabPage2;
-        private View.Tabs.CustomersTab customersTab1;
+        private CustomersTab customersTab1;
     }
 }

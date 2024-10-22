@@ -1,7 +1,6 @@
 ﻿using Bogus;
-using ObjectOrientedPractics.Model;
 
-namespace ObjectOrientedPractics.Services
+namespace ObjectOrientedPractics
 {
     /// <summary>
     /// Класс, создающий товар со случайными данными.
@@ -13,11 +12,10 @@ namespace ObjectOrientedPractics.Services
         /// </summary>
         /// <returns>Item</returns>
         public static Item GetItem() 
-        {
-            var fakerRu = new Faker("ru");
+        {;
             var faker = new Faker();
-            Item item = new(fakerRu.Commerce.Product().ToString(),
-                            fakerRu.Commerce.ProductDescription().ToString(),
+            Item item = new(faker.Commerce.Product().ToString(),
+                            faker.Commerce.ProductDescription().ToString(),
                             float.Parse(faker.Commerce.Price(0, 100000)),
                             faker.PickRandom<Category>());
 
