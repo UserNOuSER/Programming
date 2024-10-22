@@ -14,6 +14,19 @@
         /// Проверка данных: true - корректные, false - некорректные.
         /// </summary>
         bool _isDataCorrect = true;
+        public List<Item> Items
+        {
+            get { return _items; } 
+            set 
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Items не должно быть null");
+                }
+                _items = value; 
+            }
+        }
+
 
         public ItemsTab()
         {

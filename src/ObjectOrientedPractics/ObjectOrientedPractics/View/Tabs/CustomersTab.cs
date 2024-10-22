@@ -14,6 +14,19 @@
         /// Проверка данных: true - корректные, false - некорректные.
         /// </summary>
         bool _isDataCorrect = true;
+
+        public List<Customer> Customers
+        {
+            get { return _customers; }
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Customers не должно быть null");
+                }
+                _customers = value;
+            }
+        }
         public CustomersTab()
         {
             InitializeComponent();

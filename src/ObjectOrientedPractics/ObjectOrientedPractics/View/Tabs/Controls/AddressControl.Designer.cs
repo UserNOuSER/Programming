@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SplitContainer splitContainer4;
+            splitContainer4 = new SplitContainer();
             StreetTextBox = new TextBox();
             label4 = new Label();
             splitContainer6 = new SplitContainer();
@@ -52,7 +52,6 @@
             splitContainer5 = new SplitContainer();
             splitContainer7 = new SplitContainer();
             splitContainer8 = new SplitContainer();
-            splitContainer4 = new SplitContainer();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
             splitContainer4.Panel1.SuspendLayout();
             splitContainer4.Panel2.SuspendLayout();

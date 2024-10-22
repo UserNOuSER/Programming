@@ -3,12 +3,12 @@
     /// <summary>
     /// Хранит данные о покупателе.
     /// </summary>
-    internal class Customer
+    public class Customer
     {
         /// <summary>
         /// Уникальный идентификатор для всех объектов данного класса.
         /// </summary>
-        private readonly int _id;  
+        private readonly int _id;
         /// <summary>
         /// Имя покупателя.
         /// </summary>
@@ -21,9 +21,9 @@
         /// Возвращает уникальный идентификатор.
         /// </summary>
         /// 
-        public int Id 
-        { 
-            get { return _id; } 
+        public int Id
+        {
+            get { return _id; }
         }
 
         /// <summary>
@@ -32,9 +32,9 @@
         public string Fullname
         {
             get { return _fullname; }
-            set 
+            set
             {
-                ValueValidator.AssertStringOnLenght(value, 200, nameof(Fullname)); 
+                ValueValidator.AssertStringOnLenght(value, 200, nameof(Fullname));
                 ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Fullname));
                 _fullname = value;
             }
@@ -44,12 +44,12 @@
         /// Возвращает и задает адрес покупателя.
         /// </summary>
         public Address Address
-        { 
-            get { return _address; } 
-            set 
+        {
+            get { return _address; }
+            set
             {
                 _address = value;
-            } 
+            }
         }
 
         /// <summary>
@@ -59,7 +59,7 @@
         /// <param name="Address">Адрес покупателя.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
         public Customer()
-        {  
+        {
             _id = IDGenerator.GetNextId();
             Fullname = "Fullname";
             Address = new();

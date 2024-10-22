@@ -2,29 +2,12 @@ namespace ObjectOrientedPractics
 {
     public partial class MainForm : Form
     {
+        private Store _store = new();
         public MainForm()
         {
             InitializeComponent();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void itemsTab1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void itemsTab1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void itemsTab1_Load_2(object sender, EventArgs e)
-        {
-
+            customersTab.Customers = _store.Customers;
+            itemsTab.Items = _store.Items;
         }
     }
 }

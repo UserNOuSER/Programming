@@ -2,6 +2,9 @@
 {
     public partial class AddressControl : UserControl
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private Address _address = new();
 
         internal Address Address
@@ -16,7 +19,7 @@
             {
                 _address = value;
                 OutputAddress();
-                
+
             }
         }
 
@@ -24,6 +27,10 @@
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool TryInputAddress()
         {
             PostIndexTextBox.BackColor = Color.White;
@@ -93,6 +100,9 @@
             }
             return _isDataCorrect;
         }
+        /// <summary>
+        /// 
+        /// </summary>
         private void OutputAddress()
         {
             PostIndexTextBox.Text = _address.Index.ToString();
