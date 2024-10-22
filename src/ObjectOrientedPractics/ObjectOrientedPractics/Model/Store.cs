@@ -3,16 +3,15 @@
     internal class Store
     {
         /// <summary>
-        /// 
+        /// Список товаров.
         /// </summary>
         private List<Item> _items;
         /// <summary>
-        /// 
+        /// Список покупателей
         /// </summary>
         private List<Customer> _customers;
-
         /// <summary>
-        /// 
+        /// Создает и задает список для хранения товаров. Не должно быть null.
         /// </summary>
         public List<Item> Items
         {
@@ -28,7 +27,7 @@
             }
         }
         /// <summary>
-        /// 
+        /// Создает и задает список для хранения покупателей. Не должно быть null.
         /// </summary>
         public List<Customer> Customers
         {
@@ -43,7 +42,7 @@
             }
         }
         /// <summary>
-        /// 
+        /// Создаёт пустой экземпляр класса <see cref="Store"/>.
         /// </summary>
         public Store()
         {
@@ -51,6 +50,5 @@
             _customers = new List<Customer>();
 
         }
-
     }
 }

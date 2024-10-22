@@ -5,7 +5,7 @@
         /// <summary>
         /// Список для хранения покупателей.
         /// </summary>
-        private List<Customer> _customers = [];
+        private List<Customer> _customers = new();
         /// <summary>
         /// Текущий покупатель.
         /// </summary>
@@ -14,7 +14,9 @@
         /// Проверка данных: true - корректные, false - некорректные.
         /// </summary>
         bool _isDataCorrect = true;
-
+        /// <summary>
+        /// Создает и задает список для хранения покупателей. Не должно быть null.
+        /// </summary>
         public List<Customer> Customers
         {
             get { return _customers; }

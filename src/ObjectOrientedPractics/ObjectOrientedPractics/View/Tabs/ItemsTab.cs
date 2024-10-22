@@ -5,7 +5,7 @@
         /// <summary>
         /// Список для хранения товаров.
         /// </summary>
-        private List<Item> _items = [];
+        private List<Item> _items = new();
         /// <summary>
         /// Текущий товар.
         /// </summary>
@@ -14,6 +14,9 @@
         /// Проверка данных: true - корректные, false - некорректные.
         /// </summary>
         bool _isDataCorrect = true;
+        /// <summary>
+        /// Создает и задает список для хранения товаров. Не должно быть null.
+        /// </summary>
         public List<Item> Items
         {
             get { return _items; } 
@@ -35,8 +38,8 @@
 
         private void ItemsTab_Load(object sender, EventArgs e)
         {
-            _items.Add(_currentItem);
-            ItemsListBox.DataSource = _items;
+            Items.Add(_currentItem);
+            ItemsListBox.DataSource = Items;
             CategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
         }
 
@@ -57,7 +60,7 @@
             CategoryComboBox.SelectedItem = _currentItem.Category;
 
             ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = _items;
+            ItemsListBox.DataSource = Items;
         }
 
         private void ItemListBox_Click(object sender, EventArgs e)
@@ -107,24 +110,24 @@
         {
 
             Item newItem = new();
-            _items.Add(newItem);
+            Items.Add(newItem);
             ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = _items;
+            ItemsListBox.DataSource = Items;
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            _items.Remove(_currentItem);
+            Items.Remove(_currentItem);
             ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = _items;
+            ItemsListBox.DataSource = Items;
         }
 
         private void AddRandomButton_Click(object sender, EventArgs e)
         {
             Item newItem = ItemFactory.GetItem();
-            _items.Add(newItem);
+            Items.Add(newItem);
             ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = _items;
+            ItemsListBox.DataSource = Items;
         }
     }
 }

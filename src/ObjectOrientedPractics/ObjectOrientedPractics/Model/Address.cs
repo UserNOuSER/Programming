@@ -3,31 +3,31 @@
     public class Address
     {
         /// <summary>
-        /// 
+        /// Почтовый индекс.
         /// </summary>
         private string _index;
         /// <summary>
-        /// 
+        /// Страна покупателя.
         /// </summary>
         private string _country;
         /// <summary>
-        /// 
+        /// Город покупателя.
         /// </summary>
         private string _city;
         /// <summary>
-        /// 
+        /// Улица покупателя.
         /// </summary>
         private string _street;
         /// <summary>
-        /// 
+        /// Номер дома покупателя.
         /// </summary>
         private string _building;
         /// <summary>
-        /// 
+        /// Номер квартиры покупателя.
         /// </summary>
-        private string _apartement;
+        private string _apartment;
         /// <summary>
-        /// 
+        /// Возвращает и задает почтовый индекс. Должно быть длиной 6 символов и состоять только из цифр.
         /// </summary>
         public string Index
         {
@@ -46,7 +46,7 @@
             }
         }
         /// <summary>
-        /// 
+        /// Возвращает и задает страну покупателя. Должно быть непустым и короче 50 символов.
         /// </summary>
         public string Country
         {
@@ -59,7 +59,7 @@
             }
         }
         /// <summary>
-        /// 
+        /// Возвращает и задает город покупателя. Должно быть непустым и короче 50 символов.
         /// </summary>
         public string City
         {
@@ -72,7 +72,7 @@
             }
         }
         /// <summary>
-        /// 
+        /// Возвращает и задает улицу покупателя. Должно быть непустым и короче 100 символов.
         /// </summary>
         public string Street
         {
@@ -85,7 +85,7 @@
             }
         }
         /// <summary>
-        /// 
+        /// Возвращает и задает номер дома покупателя. Должно быть непустым и короче 10 символов.
         /// </summary>
         public string Building
         {
@@ -98,20 +98,20 @@
             }
         }
         /// <summary>
-        /// 
+        /// Возвращает и задает номер квартиры покупателя. Должно быть непустым и короче 10 символов.
         /// </summary>
         public string Apartment
         {
-            get { return _apartement; }
+            get { return _apartment; }
             set
             {
                 ValueValidator.AssertStringOnLenght(value, 10, nameof(Apartment));
                 ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Apartment));
-                _apartement = value;
+                _apartment = value;
             }
         }
         /// <summary>
-        /// 
+        /// Создаёт пустой экземпляр класса <see cref="Address"/>.
         /// </summary>
         public Address()
         {
@@ -123,14 +123,14 @@
             Apartment = "508";
         }
         /// <summary>
-        /// 
+        /// Создает экземпляр класса <see cref="Address"/>.
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="country"></param>
-        /// <param name="city"></param>
-        /// <param name="street"></param>
-        /// <param name="building"></param>
-        /// <param name="apartment"></param>
+        /// <param name="Index">Почтовый индекс. Должно быть длиной 6 символов и состоять только из цифр.</param>
+        /// <param name="Country">Cтрана покупателя. Должно быть непустым и короче 50 символов.</param>
+        /// <param name="City">Город покупателя. Должно быть непустым и короче 50 символов.</param>
+        /// <param name="Street">Улица покупателя. Должно быть непустым и короче 100 символов.</param>
+        /// <param name="Building">Номер дома покупателя. Должно быть непустым и короче 10 символов.</param>
+        /// <param name="Apartment">Номер квартиры покупателя. Должно быть непустым и короче 10 символов.</param>
         public Address(string index, string country, string city, string street, string building, string apartment)
         {
             Index = index;

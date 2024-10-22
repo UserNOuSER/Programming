@@ -30,7 +30,7 @@ namespace ObjectOrientedPractics
         /// </summary>
         private void InitializeComponent()
         {
-            ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(MainForm));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             itemsTab = new ItemsTab();
@@ -63,12 +63,12 @@ namespace ObjectOrientedPractics
             tabPage1.Text = "Item Tab";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // itemsTab1
+            // itemsTab
             // 
             itemsTab.Dock = DockStyle.Fill;
             itemsTab.Location = new Point(3, 3);
             itemsTab.Margin = new Padding(3, 2, 3, 2);
-            itemsTab.Name = "itemsTab1";
+            itemsTab.Name = "itemsTab";
             itemsTab.Size = new Size(1065, 544);
             itemsTab.TabIndex = 0;
             // 
@@ -83,12 +83,12 @@ namespace ObjectOrientedPractics
             tabPage2.Text = "Customer Tab";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // customersTab1
+            // customersTab
             // 
             customersTab.Dock = DockStyle.Fill;
             customersTab.Location = new Point(3, 3);
             customersTab.Margin = new Padding(3, 2, 3, 2);
-            customersTab.Name = "customersTab1";
+            customersTab.Name = "customersTab";
             customersTab.Size = new Size(1065, 540);
             customersTab.TabIndex = 0;
             // 

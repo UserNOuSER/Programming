@@ -3,10 +3,9 @@
     public partial class AddressControl : UserControl
     {
         /// <summary>
-        /// 
+        /// Адрес покупателя.
         /// </summary>
         private Address _address = new();
-
         internal Address Address
         {
             get
@@ -19,18 +18,16 @@
             {
                 _address = value;
                 OutputAddress();
-
             }
         }
-
         public AddressControl()
         {
             InitializeComponent();
         }
         /// <summary>
-        /// 
+        /// Попытка ввести данные в систему. 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>true - если все данные корректны, false - если есть некорректные данные </returns>
         public bool TryInputAddress()
         {
             PostIndexTextBox.BackColor = Color.White;
@@ -39,9 +36,6 @@
             StreetTextBox.BackColor = Color.White;
             BuildingTextBox.BackColor = Color.White;
             ApartmentTextBox.BackColor = Color.White;
-            /// <summary>
-            /// Проверка данных: true - корректные, false - некорректные.
-            /// </summary>
             bool _isDataCorrect = true;
             try
             {
@@ -101,16 +95,16 @@
             return _isDataCorrect;
         }
         /// <summary>
-        /// 
+        /// Вывод данных в TextBox'ы
         /// </summary>
         private void OutputAddress()
         {
-            PostIndexTextBox.Text = _address.Index.ToString();
-            CountryTextBox.Text = _address.Country.ToString();
-            CityTextBox.Text = _address.City.ToString();
-            StreetTextBox.Text = _address.Street.ToString();
-            BuildingTextBox.Text = _address.Building.ToString();
-            ApartmentTextBox.Text = _address.Apartment.ToString();
+            PostIndexTextBox.Text = _address.Index;
+            CountryTextBox.Text = _address.Country;
+            CityTextBox.Text = _address.City;
+            StreetTextBox.Text = _address.Street;
+            BuildingTextBox.Text = _address.Building;
+            ApartmentTextBox.Text = _address.Apartment;
         }
     }
 }

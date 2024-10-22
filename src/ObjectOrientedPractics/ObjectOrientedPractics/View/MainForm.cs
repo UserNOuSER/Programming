@@ -2,6 +2,9 @@ namespace ObjectOrientedPractics
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Данные магазина.
+        /// </summary>
         private Store _store = new();
         public MainForm()
         {
