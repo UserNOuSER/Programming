@@ -71,6 +71,7 @@ namespace ObjectOrientedPractics
             itemsTab.Name = "itemsTab";
             itemsTab.Size = new Size(1065, 544);
             itemsTab.TabIndex = 0;
+            itemsTab.Load += itemsTab_Load;
             // 
             // tabPage2
             // 

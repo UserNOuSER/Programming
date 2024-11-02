@@ -18,6 +18,10 @@
         /// </summary>
         private Address _address;
         /// <summary>
+        /// 
+        /// </summary>
+        private Cart _cart;
+        /// <summary>
         /// Возвращает уникальный идентификатор.
         /// </summary>
         /// 
@@ -50,16 +54,22 @@
             }
         }
         /// <summary>
+        /// 
+        /// </summary>
+        public Cart Cart { get; set; }
+        /// <summary>
         /// Создаёт пустой экземпляр класса <see cref="Customer"/>.
         /// </summary>
         /// <param name="Fullname">Имя покупателя. По умолчанию - "Fullname".</param>
         /// <param name="Address">Адрес покупателя.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
+        /// <param name="Cart"></param>
         public Customer()
         {
             _id = IDGenerator.GetNextId();
             Fullname = "Fullname";
             Address = new();
+            Cart = new();
         }
         /// <summary>
         /// Создаёт экземпляр класса <see cref="Customer"/>.
@@ -67,11 +77,13 @@
         /// <param name="Fullname">Имя покупателя. Должно быть непустым и короче 200 символов.</param>
         /// <param name="Info">Адрес покупателя.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
+        /// <param name="Cart"></param>
         public Customer(string fullname, Address address)
         {
             _id = IDGenerator.GetNextId();
             Fullname = fullname;
             Address = address;
+            Cart = new();
         }
         /// <summary>
         /// Возвращает имя покупателя
