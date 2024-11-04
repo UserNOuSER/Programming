@@ -1,6 +1,6 @@
 ﻿namespace ObjectOrientedPractics
 {
-    internal enum OrderStatus
+    public enum OrderStatus
     {
         New,
         Processing,

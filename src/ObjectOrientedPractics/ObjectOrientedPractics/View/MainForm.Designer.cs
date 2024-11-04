@@ -36,21 +36,26 @@ namespace ObjectOrientedPractics
             itemsTab = new ItemsTab();
             tabPage2 = new TabPage();
             customersTab = new CustomersTab();
+            CartTab = new TabPage();
+            cartsTab1 = new CartsTab();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            CartTab.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(CartTab);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1079, 579);
             tabControl1.TabIndex = 0;
+            tabControl1.SelectedIndexChanged += SelectedTabChanged;
             // 
             // tabPage1
             // 
@@ -71,7 +76,6 @@ namespace ObjectOrientedPractics
             itemsTab.Name = "itemsTab";
             itemsTab.Size = new Size(1065, 544);
             itemsTab.TabIndex = 0;
-            itemsTab.Load += itemsTab_Load;
             // 
             // tabPage2
             // 
@@ -93,6 +97,27 @@ namespace ObjectOrientedPractics
             customersTab.Size = new Size(1065, 540);
             customersTab.TabIndex = 0;
             // 
+            // CartTab
+            // 
+            CartTab.Controls.Add(cartsTab1);
+            CartTab.Location = new Point(4, 25);
+            CartTab.Name = "CartTab";
+            CartTab.Padding = new Padding(3);
+            CartTab.Size = new Size(1071, 550);
+            CartTab.TabIndex = 2;
+            CartTab.Text = "Cart Tab";
+            CartTab.UseVisualStyleBackColor = true;
+            // 
+            // cartsTab1
+            // 
+            cartsTab1.Customers = null;
+            cartsTab1.Dock = DockStyle.Fill;
+            cartsTab1.Items = null;
+            cartsTab1.Location = new Point(3, 3);
+            cartsTab1.Name = "cartsTab1";
+            cartsTab1.Size = new Size(1065, 544);
+            cartsTab1.TabIndex = 0;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(6F, 16F);
@@ -108,6 +133,7 @@ namespace ObjectOrientedPractics
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
+            CartTab.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -118,5 +144,7 @@ namespace ObjectOrientedPractics
         private ItemsTab itemsTab;
         private TabPage tabPage2;
         private CustomersTab customersTab;
+        private TabPage CartTab;
+        private CartsTab cartsTab1;
     }
 }

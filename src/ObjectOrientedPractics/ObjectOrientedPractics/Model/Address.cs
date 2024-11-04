@@ -53,7 +53,7 @@
             get { return _country; }
             set
             {
-                ValueValidator.AssertStringOnLenght(value, 50, nameof(Country));
+                ValueValidator.AssertStringOnLenght(value, 100, nameof(Country));
                 ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Country));
                 _country = value;
             }
