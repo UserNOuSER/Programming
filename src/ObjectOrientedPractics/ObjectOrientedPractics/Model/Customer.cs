@@ -22,9 +22,12 @@
         /// </summary>
         private Cart _cart;
         /// <summary>
+        /// 
+        /// </summary>
+        private List<Order> _orders;
+        /// <summary>
         /// Возвращает уникальный идентификатор.
         /// </summary>
-        /// 
         public int Id
         {
             get { return _id; }
@@ -56,7 +59,16 @@
         /// <summary>
         /// 
         /// </summary>
-        public Cart Cart { get; set; }
+        public Cart Cart 
+        {
+            get { return _cart; }
+            set { _cart = value; } 
+        }
+        public List<Order> Orders 
+        { 
+            get { return _orders; } 
+            set { _orders = value; }
+        }
         /// <summary>
         /// Создаёт пустой экземпляр класса <see cref="Customer"/>.
         /// </summary>
@@ -64,12 +76,14 @@
         /// <param name="Address">Адрес покупателя.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
         /// <param name="Cart"></param>
+        /// <param name="Orders"></param>
         public Customer()
         {
             _id = IDGenerator.GetNextId();
             Fullname = "Fullname";
             Address = new();
             Cart = new();
+            Orders = new();
         }
         /// <summary>
         /// Создаёт экземпляр класса <see cref="Customer"/>.
@@ -78,12 +92,14 @@
         /// <param name="Info">Адрес покупателя.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
         /// <param name="Cart"></param>
+        /// <param name="Orders"></param>
         public Customer(string fullname, Address address)
         {
             _id = IDGenerator.GetNextId();
             Fullname = fullname;
             Address = address;
             Cart = new();
+            Orders = new();
         }
         /// <summary>
         /// Возвращает имя покупателя

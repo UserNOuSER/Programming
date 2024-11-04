@@ -11,7 +11,7 @@ namespace ObjectOrientedPractics
         /// <summary>
         /// 
         /// </summary>
-        private float _amount;
+        private double _amount = 0.0;
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +23,10 @@ namespace ObjectOrientedPractics
         /// <summary>
         /// 
         /// </summary>
-        public float Amount
+        public double Amount
         {
             get
             {
-                _amount = 0;
                 if (!((Items == null) || (Items.Count == 0)))
                 {
                     for (int i = 0; i < Items.Count; i++)
