@@ -52,7 +52,7 @@
 
         private void AddToCartButton_Click(object sender, EventArgs e)
         {
-            Item selectedItem = ItemsListBox.SelectedItem as Item;
+            Item? selectedItem = ItemsListBox.SelectedItem as Item;
             if (selectedItem == null) { return; }
             _currentCustomer.Cart.Items.Add(selectedItem);
             UpdateCart();
@@ -61,16 +61,16 @@
         private void CreateOrderButton_Click(object sender, EventArgs e)
         {
             if (CartListBox.Items.Count == 0) { return; }
-            Order newOrder = new Order(_currentCustomer.Address, _currentCustomer.Cart.Items);
+            Order newOrder = new(_currentCustomer.Address, _currentCustomer.Cart.Items);
             _currentCustomer.Orders.Add(newOrder);
 
-            _currentCustomer.Cart.Items.Clear();
+            _currentCustomer.Cart.Items = new();
             UpdateCart();
         }
 
         private void RemoveItemButton_Click(object sender, EventArgs e)
         {
-            Item selectedItem = ItemsListBox.SelectedItem as Item;
+            Item? selectedItem = ItemsListBox.SelectedItem as Item;
             if (selectedItem == null) { return; }
             _currentCustomer.Cart.Items.Remove(selectedItem);
             UpdateCart();

@@ -5,7 +5,7 @@
         /// <summary>
         /// Список для хранения покупателей.
         /// </summary>
-        private List<Customer> _customers = new();
+        private List<Customer> _customers = [];
         /// <summary>
         /// Текущий покупатель.
         /// </summary>
@@ -43,14 +43,11 @@
 
         private void CustomersListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Customer customer = CustomersListBox.SelectedItem as Customer;
+            Customer? customer = CustomersListBox.SelectedItem as Customer;
 
             if (customer is null) { return; }
             if (!_isDataCorrect)
-            {
-                customer = _currentCustomer;
-                return;
-            }
+            { return; }
             _currentCustomer = customer;
 
             IDTextBox.Text = _currentCustomer.Id.ToString();

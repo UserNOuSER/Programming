@@ -38,10 +38,13 @@ namespace ObjectOrientedPractics
             customersTab = new CustomersTab();
             CartTab = new TabPage();
             cartsTab1 = new CartsTab();
+            tabPage3 = new TabPage();
+            ordersTab1 = new OrdersTab();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             CartTab.SuspendLayout();
+            tabPage3.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -49,6 +52,7 @@ namespace ObjectOrientedPractics
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(CartTab);
+            tabControl1.Controls.Add(tabPage3);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -100,10 +104,10 @@ namespace ObjectOrientedPractics
             // CartTab
             // 
             CartTab.Controls.Add(cartsTab1);
-            CartTab.Location = new Point(4, 25);
+            CartTab.Location = new Point(4, 29);
             CartTab.Name = "CartTab";
             CartTab.Padding = new Padding(3);
-            CartTab.Size = new Size(1071, 550);
+            CartTab.Size = new Size(1071, 546);
             CartTab.TabIndex = 2;
             CartTab.Text = "Cart Tab";
             CartTab.UseVisualStyleBackColor = true;
@@ -115,8 +119,28 @@ namespace ObjectOrientedPractics
             cartsTab1.Items = null;
             cartsTab1.Location = new Point(3, 3);
             cartsTab1.Name = "cartsTab1";
-            cartsTab1.Size = new Size(1065, 544);
+            cartsTab1.Size = new Size(1065, 540);
             cartsTab1.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(ordersTab1);
+            tabPage3.Location = new Point(4, 25);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(1071, 550);
+            tabPage3.TabIndex = 3;
+            tabPage3.Text = "tabPage3";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // ordersTab1
+            // 
+            ordersTab1.Customers = null;
+            ordersTab1.Dock = DockStyle.Fill;
+            ordersTab1.Location = new Point(3, 3);
+            ordersTab1.Name = "ordersTab1";
+            ordersTab1.Size = new Size(1065, 544);
+            ordersTab1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -134,6 +158,7 @@ namespace ObjectOrientedPractics
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             CartTab.ResumeLayout(false);
+            tabPage3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -146,5 +171,7 @@ namespace ObjectOrientedPractics
         private CustomersTab customersTab;
         private TabPage CartTab;
         private CartsTab cartsTab1;
+        private TabPage tabPage3;
+        private OrdersTab ordersTab1;
     }
 }

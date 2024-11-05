@@ -5,7 +5,7 @@
         /// <summary>
         /// Список для хранения товаров.
         /// </summary>
-        private List<Item> _items = new();
+        private List<Item> _items = [];
         /// <summary>
         /// Текущий товар.
         /// </summary>

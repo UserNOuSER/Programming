@@ -45,7 +45,7 @@ namespace ObjectOrientedPractics
         /// </summary>
         public Cart()
         {
-            Items = new();
+            Items = [];
         }
         /// <summary>
         /// 

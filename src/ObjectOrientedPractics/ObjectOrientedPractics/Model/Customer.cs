@@ -83,7 +83,7 @@
             Fullname = "Fullname";
             Address = new();
             Cart = new();
-            Orders = new();
+            Orders = [];
         }
         /// <summary>
         /// Создаёт экземпляр класса <see cref="Customer"/>.
@@ -99,7 +99,7 @@
             Fullname = fullname;
             Address = address;
             Cart = new();
-            Orders = new();
+            Orders = [];
         }
         /// <summary>
         /// Возвращает имя покупателя

@@ -6,7 +6,7 @@
         private readonly DateTime _dateTime;
         private Address _address;
         private List<Item> _items;
-        private double _amount = 0.0;
+        private double _amount;
         private OrderStatus _orderStatus;
         public int Id 
         { 
@@ -30,11 +30,12 @@
         {
             get 
             {
-                if (!((Items == null) || (Items.Count == 0)))
+                _amount = 0.0;
+                if ((Items != null) & (Items.Count != 0))
                 {
-                    for (int i = 0; i < Items.Count; i++)
+                    foreach (var item in Items)
                     {
-                        _amount += Items[i].Cost;
+                        _amount += item.Cost;
                     }
                 }
                 return _amount;
@@ -47,7 +48,7 @@
         }
         public Order()
         {
-            _items = new List<Item>();
+            _items = [];
             _id = IDGenerator.GetNextId();
             _dateTime = DateTime.Now;
             _address = new();
@@ -56,7 +57,7 @@
         public Order(Address address, List<Item> items)
         {
             _id = IDGenerator.GetNextId();
-            _dateTime = DateTime.Now; ;
+            _dateTime = DateTime.Now;
             Address = address;
             Items = items;
             _orderStatus = OrderStatus.New;

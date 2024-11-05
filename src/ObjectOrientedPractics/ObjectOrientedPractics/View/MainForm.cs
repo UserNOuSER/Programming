@@ -10,16 +10,23 @@ namespace ObjectOrientedPractics
         {
             InitializeComponent();
             itemsTab.Items = _store.Items;
-            customersTab.Customers = _store.Customers;
             cartsTab1.Items = _store.Items;
+
+            customersTab.Customers = _store.Customers;
             cartsTab1.Customers = _store.Customers;
+            ordersTab1.Customers = _store.Customers;
         }
 
         private void SelectedTabChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 2)
+            switch (tabControl1.SelectedIndex)
             {
-                cartsTab1.RefreshData();
+                case 2:
+                    cartsTab1.RefreshData();
+                    break;
+                case 3:
+                    ordersTab1.RefreshData();
+                    break;
             }
         }
 
