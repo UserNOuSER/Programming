@@ -3,19 +3,19 @@
     public partial class CartsTab : UserControl
     {
         /// <summary>
-        /// 
+        /// Список товаров
         /// </summary>
         private List<Item> _items;
         /// <summary>
-        /// 
+        /// Список покупателей
         /// </summary>
         private List<Customer> _customers;
         /// <summary>
-        /// 
+        /// Текущий покупатель
         /// </summary>
         private Customer _currentCustomer;
         /// <summary>
-        /// 
+        /// Возвращает и задает список покупателей
         /// </summary>
         public List<Customer> Customers
         {
@@ -23,7 +23,7 @@
             set { _customers = value; }
         }
         /// <summary>
-        /// 
+        /// Возвращает и задает список товаров
         /// </summary>
         public List<Item> Items
         {
@@ -48,7 +48,6 @@
             UpdateCart();
 
         }
-
 
         private void AddToCartButton_Click(object sender, EventArgs e)
         {
@@ -81,6 +80,9 @@
             _currentCustomer.Cart.Items.Clear();
             UpdateCart();
         }
+        /// <summary>
+        /// Обновляет данные Суммарной стоимости и корзины
+        /// </summary>
         private void UpdateCart()
         {
             AmountNumberLabel.Text = _currentCustomer.Cart.Amount.ToString();
@@ -89,6 +91,9 @@
             CartListBox.DataSource = _currentCustomer.Cart.Items;
 
         }
+        /// <summary>
+        /// Обновляет данные предметов и покупателей
+        /// </summary>
         public void RefreshData()
         {
             ItemsListBox.DataSource = null;

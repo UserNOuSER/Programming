@@ -80,14 +80,14 @@
         /// <param name="Info">Описание товара. По умолчанию - "info".</param>
         /// <param name="Cost">Цена товара. По умолчанию - 0.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
-        /// <param name="Category">Категория товара. По умолчанию - Здоровье.</param>
+        /// <param name="Category">Категория товара. По умолчанию - Acsessories.</param>
         public Item()
         {
             _id = IDGenerator.GetNextId();
             Name = "name";
             Info = "info";
             Cost = 0;
-            Category = Category.Здоровье;
+            Category = Category.Accessories;
         }
         /// <summary>
         /// Создаёт экземпляр класса <see cref="Item"/>.

@@ -18,11 +18,11 @@
         /// </summary>
         private Address _address;
         /// <summary>
-        /// 
+        /// Корзина покупателя
         /// </summary>
         private Cart _cart;
         /// <summary>
-        /// 
+        /// Список заказов покупателя
         /// </summary>
         private List<Order> _orders;
         /// <summary>
@@ -57,13 +57,16 @@
             }
         }
         /// <summary>
-        /// 
+        /// Возвращает и задает корзину покупателя
         /// </summary>
         public Cart Cart 
         {
             get { return _cart; }
             set { _cart = value; } 
         }
+        /// <summary>
+        /// Возвращает и задает заказы покупателя
+        /// </summary>
         public List<Order> Orders 
         { 
             get { return _orders; } 
@@ -75,8 +78,8 @@
         /// <param name="Fullname">Имя покупателя. По умолчанию - "Fullname".</param>
         /// <param name="Address">Адрес покупателя.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
-        /// <param name="Cart"></param>
-        /// <param name="Orders"></param>
+        /// <param name="Cart">Корзина покупателя</param>
+        /// <param name="Orders">Заказы покупателя</param>
         public Customer()
         {
             _id = IDGenerator.GetNextId();
@@ -91,8 +94,8 @@
         /// <param name="Fullname">Имя покупателя. Должно быть непустым и короче 200 символов.</param>
         /// <param name="Info">Адрес покупателя.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
-        /// <param name="Cart"></param>
-        /// <param name="Orders"></param>
+        /// <param name="Cart">Корзина покупателя</param>
+        /// <param name="Orders">Заказы покупателя</param>
         public Customer(string fullname, Address address)
         {
             _id = IDGenerator.GetNextId();

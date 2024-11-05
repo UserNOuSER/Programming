@@ -159,6 +159,8 @@
             // 
             // OrdersDataGridView
             // 
+            OrdersDataGridView.AllowUserToAddRows = false;
+            OrdersDataGridView.AllowUserToDeleteRows = false;
             OrdersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             OrdersDataGridView.Dock = DockStyle.Fill;
             OrdersDataGridView.Location = new Point(0, 0);
@@ -172,6 +174,7 @@
             // splitContainer2
             // 
             splitContainer2.Dock = DockStyle.Fill;
+            splitContainer2.IsSplitterFixed = true;
             splitContainer2.Location = new Point(0, 0);
             splitContainer2.Name = "splitContainer2";
             splitContainer2.Orientation = Orientation.Horizontal;
@@ -201,6 +204,7 @@
             // splitContainer4
             // 
             splitContainer4.Dock = DockStyle.Fill;
+            splitContainer4.IsSplitterFixed = true;
             splitContainer4.Location = new Point(0, 0);
             splitContainer4.Name = "splitContainer4";
             splitContainer4.Orientation = Orientation.Horizontal;
@@ -219,6 +223,7 @@
             // splitContainer11
             // 
             splitContainer11.Dock = DockStyle.Fill;
+            splitContainer11.IsSplitterFixed = true;
             splitContainer11.Location = new Point(0, 0);
             splitContainer11.Name = "splitContainer11";
             // 
@@ -255,6 +260,7 @@
             // splitContainer5
             // 
             splitContainer5.Dock = DockStyle.Fill;
+            splitContainer5.IsSplitterFixed = true;
             splitContainer5.Location = new Point(0, 0);
             splitContainer5.Name = "splitContainer5";
             splitContainer5.Orientation = Orientation.Horizontal;
@@ -273,6 +279,7 @@
             // splitContainer12
             // 
             splitContainer12.Dock = DockStyle.Fill;
+            splitContainer12.IsSplitterFixed = true;
             splitContainer12.Location = new Point(0, 0);
             splitContainer12.Name = "splitContainer12";
             // 
@@ -309,6 +316,7 @@
             // splitContainer6
             // 
             splitContainer6.Dock = DockStyle.Fill;
+            splitContainer6.IsSplitterFixed = true;
             splitContainer6.Location = new Point(0, 0);
             splitContainer6.Name = "splitContainer6";
             splitContainer6.Orientation = Orientation.Horizontal;
@@ -327,6 +335,7 @@
             // splitContainer13
             // 
             splitContainer13.Dock = DockStyle.Fill;
+            splitContainer13.IsSplitterFixed = true;
             splitContainer13.Location = new Point(0, 0);
             splitContainer13.Name = "splitContainer13";
             // 
@@ -364,6 +373,7 @@
             // splitContainer7
             // 
             splitContainer7.Dock = DockStyle.Fill;
+            splitContainer7.IsSplitterFixed = true;
             splitContainer7.Location = new Point(0, 0);
             splitContainer7.Name = "splitContainer7";
             splitContainer7.Orientation = Orientation.Horizontal;
@@ -392,6 +402,7 @@
             // splitContainer8
             // 
             splitContainer8.Dock = DockStyle.Fill;
+            splitContainer8.IsSplitterFixed = true;
             splitContainer8.Location = new Point(0, 0);
             splitContainer8.Name = "splitContainer8";
             splitContainer8.Orientation = Orientation.Horizontal;
@@ -421,6 +432,7 @@
             // splitContainer9
             // 
             splitContainer9.Dock = DockStyle.Fill;
+            splitContainer9.IsSplitterFixed = true;
             splitContainer9.Location = new Point(0, 0);
             splitContainer9.Name = "splitContainer9";
             splitContainer9.Orientation = Orientation.Horizontal;
@@ -448,6 +460,7 @@
             // splitContainer10
             // 
             splitContainer10.Dock = DockStyle.Fill;
+            splitContainer10.IsSplitterFixed = true;
             splitContainer10.Location = new Point(0, 0);
             splitContainer10.Name = "splitContainer10";
             splitContainer10.Orientation = Orientation.Horizontal;

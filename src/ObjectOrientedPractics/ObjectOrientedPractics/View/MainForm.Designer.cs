@@ -84,10 +84,10 @@ namespace ObjectOrientedPractics
             // tabPage2
             // 
             tabPage2.Controls.Add(customersTab);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 25);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1071, 546);
+            tabPage2.Size = new Size(1071, 550);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Customer Tab";
             tabPage2.UseVisualStyleBackColor = true;
@@ -98,16 +98,16 @@ namespace ObjectOrientedPractics
             customersTab.Location = new Point(3, 3);
             customersTab.Margin = new Padding(3, 2, 3, 2);
             customersTab.Name = "customersTab";
-            customersTab.Size = new Size(1065, 540);
+            customersTab.Size = new Size(1065, 544);
             customersTab.TabIndex = 0;
             // 
             // CartTab
             // 
             CartTab.Controls.Add(cartsTab1);
-            CartTab.Location = new Point(4, 29);
+            CartTab.Location = new Point(4, 25);
             CartTab.Name = "CartTab";
             CartTab.Padding = new Padding(3);
-            CartTab.Size = new Size(1071, 546);
+            CartTab.Size = new Size(1071, 550);
             CartTab.TabIndex = 2;
             CartTab.Text = "Cart Tab";
             CartTab.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@ namespace ObjectOrientedPractics
             cartsTab1.Items = null;
             cartsTab1.Location = new Point(3, 3);
             cartsTab1.Name = "cartsTab1";
-            cartsTab1.Size = new Size(1065, 540);
+            cartsTab1.Size = new Size(1065, 544);
             cartsTab1.TabIndex = 0;
             // 
             // tabPage3
@@ -130,7 +130,7 @@ namespace ObjectOrientedPractics
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(1071, 550);
             tabPage3.TabIndex = 3;
-            tabPage3.Text = "tabPage3";
+            tabPage3.Text = "Order Tab";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // ordersTab1

@@ -8,12 +8,10 @@ namespace ObjectOrientedPractics
         /// Список покупателей.
         /// </summary>
         private List<Customer> _customers;
-
         /// <summary>
         /// Список заказов.
         /// </summary>
         private List<Order> _orders = [];
-
         /// <summary>
         /// Возвращает и задаёт список всех покупателей.
         /// </summary>
@@ -25,18 +23,18 @@ namespace ObjectOrientedPractics
         public OrdersTab()
         {
             InitializeComponent();
-            OrderStatusComboBox.DataSource = Enum.GetValues(typeof(OrderStatus));
         }
 
         private void OrdersTab_Load(object sender, EventArgs e)
         {
             RefreshData();
+            OrderStatusComboBox.DataSource = Enum.GetValues(typeof(OrderStatus));
         }
 
         private void OrdersDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             OrdersListBox.DataSource = null;
-            if (OrdersDataGridView.SelectedCells.Count == 0)
+            if (OrdersDataGridView.CurrentCell == null)
             {
                 IDTextBox.Text = string.Empty;
                 DatetimeTextBox.Text = string.Empty;
@@ -51,13 +49,22 @@ namespace ObjectOrientedPractics
                 DatetimeTextBox.Text = order.DateTime.ToString();
                 OrderStatusComboBox.SelectedItem = order.OrderStatus;
                 addressControl1.Address = order.Address;
-                OrdersListBox.DataSource = null;
                 OrdersListBox.DataSource = order.Items;
                 AmountNumberLabel.Text = order.Amount.ToString();
             }
         }
+        private void OrderStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (OrdersDataGridView.CurrentRow == null) { return; }
+            Order order = _orders[OrdersDataGridView.CurrentRow.Index];
+            order.OrderStatus = (OrderStatus)OrderStatusComboBox.SelectedItem;
+        }
+        /// <summary>
+        /// Обновление данных в таблице
+        /// </summary>
         public void RefreshData()
         {
+            _orders = [];
             DataTable dataTable = new();
             dataTable.Columns.Add("ID", typeof(int));
             dataTable.Columns.Add("Address", typeof(string));
@@ -81,13 +88,8 @@ namespace ObjectOrientedPractics
                     dataTable.Rows.Add(row);
                 }
             }
+            OrdersDataGridView.DataSource = null;
             OrdersDataGridView.DataSource = dataTable;
-        }
-        private void OrderStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (OrdersDataGridView.CurrentRow == null) { return; }
-            Order order = _orders[OrdersDataGridView.CurrentRow.Index];
-            order.OrderStatus = (OrderStatus)OrderStatusComboBox.SelectedItem;
         }
     }
 }

@@ -16,7 +16,9 @@ namespace ObjectOrientedPractics
             cartsTab1.Customers = _store.Customers;
             ordersTab1.Customers = _store.Customers;
         }
-
+        /// <summary>
+        /// Обновление параметров при смене окон
+        /// </summary>
         private void SelectedTabChanged(object sender, EventArgs e)
         {
             switch (tabControl1.SelectedIndex)

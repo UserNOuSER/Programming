@@ -140,5 +140,13 @@
             Building = building;
             Apartment = apartment;
         }
+        /// <summary>
+        /// Метод для возвращения адреса строкой.
+        /// </summary>
+        /// <returns>Возвращает адрес строкой</returns>
+        public override string ToString()
+        {
+            return $"{Index} {Country} {City} {Street} {Building} {Apartment}";
+        }
     }
 }

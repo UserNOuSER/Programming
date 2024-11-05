@@ -5,19 +5,19 @@
     /// </summary>
     public enum Category
     {
-        Одежда,
-        Обувь,
-        Аксессуары,
-        Дом,
-        Сад,
-        Красота,
-        Здоровье,
-        Электроника,
-        Подарки,
-        Хобби,
-        Книги,
-        Спорт,
-        Отдых,
-        Детям
+        Clothes,
+        Shoes,
+        Accessories,
+        House,
+        Garden,
+        Beauty,
+        Health,
+        Electronics,
+        Gifts,
+        Hobbies,
+        Boobs,
+        Sport,
+        Chill,
+        Kids
     }
 }
