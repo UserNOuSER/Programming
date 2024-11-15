@@ -11,6 +11,7 @@ namespace ObjectOrientedPractics
             InitializeComponent();
             itemsTab.Items = _store.Items;
             cartsTab1.Items = _store.Items;
+            priorityOrdersTab1.Items = _store.Items;
 
             customersTab.Customers = _store.Customers;
             cartsTab1.Customers = _store.Customers;
@@ -32,5 +33,9 @@ namespace ObjectOrientedPractics
             }
         }
 
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

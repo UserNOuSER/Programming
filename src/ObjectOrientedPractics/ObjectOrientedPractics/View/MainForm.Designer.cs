@@ -40,11 +40,14 @@ namespace ObjectOrientedPractics
             cartsTab1 = new CartsTab();
             tabPage3 = new TabPage();
             ordersTab1 = new OrdersTab();
+            PriorityOrderTab = new TabPage();
+            priorityOrdersTab1 = new PriorityOrdersTab();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             CartTab.SuspendLayout();
             tabPage3.SuspendLayout();
+            PriorityOrderTab.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -53,6 +56,7 @@ namespace ObjectOrientedPractics
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(CartTab);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(PriorityOrderTab);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -84,10 +88,10 @@ namespace ObjectOrientedPractics
             // tabPage2
             // 
             tabPage2.Controls.Add(customersTab);
-            tabPage2.Location = new Point(4, 25);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1071, 550);
+            tabPage2.Size = new Size(1071, 546);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Customer Tab";
             tabPage2.UseVisualStyleBackColor = true;
@@ -98,16 +102,16 @@ namespace ObjectOrientedPractics
             customersTab.Location = new Point(3, 3);
             customersTab.Margin = new Padding(3, 2, 3, 2);
             customersTab.Name = "customersTab";
-            customersTab.Size = new Size(1065, 544);
+            customersTab.Size = new Size(1065, 540);
             customersTab.TabIndex = 0;
             // 
             // CartTab
             // 
             CartTab.Controls.Add(cartsTab1);
-            CartTab.Location = new Point(4, 25);
+            CartTab.Location = new Point(4, 29);
             CartTab.Name = "CartTab";
             CartTab.Padding = new Padding(3);
-            CartTab.Size = new Size(1071, 550);
+            CartTab.Size = new Size(1071, 546);
             CartTab.TabIndex = 2;
             CartTab.Text = "Cart Tab";
             CartTab.UseVisualStyleBackColor = true;
@@ -119,19 +123,20 @@ namespace ObjectOrientedPractics
             cartsTab1.Items = null;
             cartsTab1.Location = new Point(3, 3);
             cartsTab1.Name = "cartsTab1";
-            cartsTab1.Size = new Size(1065, 544);
+            cartsTab1.Size = new Size(1065, 540);
             cartsTab1.TabIndex = 0;
             // 
             // tabPage3
             // 
             tabPage3.Controls.Add(ordersTab1);
-            tabPage3.Location = new Point(4, 25);
+            tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1071, 550);
+            tabPage3.Size = new Size(1071, 546);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "Order Tab";
             tabPage3.UseVisualStyleBackColor = true;
+            tabPage3.Click += tabPage3_Click;
             // 
             // ordersTab1
             // 
@@ -141,6 +146,25 @@ namespace ObjectOrientedPractics
             ordersTab1.Name = "ordersTab1";
             ordersTab1.Size = new Size(1065, 544);
             ordersTab1.TabIndex = 0;
+            // 
+            // PriorityOrderTab
+            // 
+            PriorityOrderTab.Controls.Add(priorityOrdersTab1);
+            PriorityOrderTab.Location = new Point(4, 25);
+            PriorityOrderTab.Name = "PriorityOrderTab";
+            PriorityOrderTab.Padding = new Padding(3);
+            PriorityOrderTab.Size = new Size(1071, 550);
+            PriorityOrderTab.TabIndex = 4;
+            PriorityOrderTab.Text = "Priority Order Tab";
+            PriorityOrderTab.UseVisualStyleBackColor = true;
+            // 
+            // priorityOrdersTab1
+            // 
+            priorityOrdersTab1.Dock = DockStyle.Fill;
+            priorityOrdersTab1.Location = new Point(3, 3);
+            priorityOrdersTab1.Name = "priorityOrdersTab1";
+            priorityOrdersTab1.Size = new Size(1065, 544);
+            priorityOrdersTab1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -159,6 +183,7 @@ namespace ObjectOrientedPractics
             tabPage2.ResumeLayout(false);
             CartTab.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
+            PriorityOrderTab.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -173,5 +198,7 @@ namespace ObjectOrientedPractics
         private CartsTab cartsTab1;
         private TabPage tabPage3;
         private OrdersTab ordersTab1;
+        private TabPage PriorityOrderTab;
+        private PriorityOrdersTab priorityOrdersTab1;
     }
 }
