@@ -35,17 +35,27 @@
             splitContainer2 = new SplitContainer();
             SelectedOrderLabel = new Label();
             splitContainer4 = new SplitContainer();
+            splitContainer5 = new SplitContainer();
+            splitContainer6 = new SplitContainer();
+            splitContainer14 = new SplitContainer();
+            splitContainer15 = new SplitContainer();
             splitContainer11 = new SplitContainer();
             label3 = new Label();
             IDTextBox = new TextBox();
-            splitContainer5 = new SplitContainer();
+            splitContainer16 = new SplitContainer();
             splitContainer12 = new SplitContainer();
             label4 = new Label();
             DatetimeTextBox = new TextBox();
-            splitContainer6 = new SplitContainer();
             splitContainer13 = new SplitContainer();
             label5 = new Label();
             OrderStatusComboBox = new ComboBox();
+            PriorityOptionsPanel = new Panel();
+            splitContainer17 = new SplitContainer();
+            label1 = new Label();
+            splitContainer18 = new SplitContainer();
+            splitContainer19 = new SplitContainer();
+            label2 = new Label();
+            TimeComboBox = new ComboBox();
             splitContainer7 = new SplitContainer();
             addressControl1 = new AddressControl();
             splitContainer8 = new SplitContainer();
@@ -69,29 +79,51 @@
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
-            splitContainer4.Panel1.SuspendLayout();
             splitContainer4.Panel2.SuspendLayout();
             splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer11).BeginInit();
-            splitContainer11.Panel1.SuspendLayout();
-            splitContainer11.Panel2.SuspendLayout();
-            splitContainer11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer5).BeginInit();
-            splitContainer5.Panel1.SuspendLayout();
             splitContainer5.Panel2.SuspendLayout();
             splitContainer5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)splitContainer12).BeginInit();
-            splitContainer12.Panel1.SuspendLayout();
-            splitContainer12.Panel2.SuspendLayout();
-            splitContainer12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer6).BeginInit();
             splitContainer6.Panel1.SuspendLayout();
             splitContainer6.Panel2.SuspendLayout();
             splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer14).BeginInit();
+            splitContainer14.Panel1.SuspendLayout();
+            splitContainer14.Panel2.SuspendLayout();
+            splitContainer14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer15).BeginInit();
+            splitContainer15.Panel1.SuspendLayout();
+            splitContainer15.Panel2.SuspendLayout();
+            splitContainer15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer11).BeginInit();
+            splitContainer11.Panel1.SuspendLayout();
+            splitContainer11.Panel2.SuspendLayout();
+            splitContainer11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer16).BeginInit();
+            splitContainer16.Panel1.SuspendLayout();
+            splitContainer16.Panel2.SuspendLayout();
+            splitContainer16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer12).BeginInit();
+            splitContainer12.Panel1.SuspendLayout();
+            splitContainer12.Panel2.SuspendLayout();
+            splitContainer12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer13).BeginInit();
             splitContainer13.Panel1.SuspendLayout();
             splitContainer13.Panel2.SuspendLayout();
             splitContainer13.SuspendLayout();
+            PriorityOptionsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer17).BeginInit();
+            splitContainer17.Panel1.SuspendLayout();
+            splitContainer17.Panel2.SuspendLayout();
+            splitContainer17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer18).BeginInit();
+            splitContainer18.Panel1.SuspendLayout();
+            splitContainer18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer19).BeginInit();
+            splitContainer19.Panel1.SuspendLayout();
+            splitContainer19.Panel2.SuspendLayout();
+            splitContainer19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer7).BeginInit();
             splitContainer7.Panel1.SuspendLayout();
             splitContainer7.Panel2.SuspendLayout();
@@ -204,21 +236,86 @@
             // splitContainer4
             // 
             splitContainer4.Dock = DockStyle.Fill;
-            splitContainer4.IsSplitterFixed = true;
             splitContainer4.Location = new Point(0, 0);
             splitContainer4.Name = "splitContainer4";
             splitContainer4.Orientation = Orientation.Horizontal;
-            // 
-            // splitContainer4.Panel1
-            // 
-            splitContainer4.Panel1.Controls.Add(splitContainer11);
+            splitContainer4.Panel1Collapsed = true;
             // 
             // splitContainer4.Panel2
             // 
             splitContainer4.Panel2.Controls.Add(splitContainer5);
             splitContainer4.Size = new Size(586, 603);
-            splitContainer4.SplitterDistance = 29;
+            splitContainer4.SplitterDistance = 25;
             splitContainer4.TabIndex = 0;
+            // 
+            // splitContainer5
+            // 
+            splitContainer5.Dock = DockStyle.Fill;
+            splitContainer5.IsSplitterFixed = true;
+            splitContainer5.Location = new Point(0, 0);
+            splitContainer5.Name = "splitContainer5";
+            splitContainer5.Orientation = Orientation.Horizontal;
+            splitContainer5.Panel1Collapsed = true;
+            // 
+            // splitContainer5.Panel2
+            // 
+            splitContainer5.Panel2.Controls.Add(splitContainer6);
+            splitContainer5.Size = new Size(586, 603);
+            splitContainer5.SplitterDistance = 29;
+            splitContainer5.TabIndex = 0;
+            // 
+            // splitContainer6
+            // 
+            splitContainer6.Dock = DockStyle.Fill;
+            splitContainer6.Location = new Point(0, 0);
+            splitContainer6.Name = "splitContainer6";
+            splitContainer6.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer6.Panel1
+            // 
+            splitContainer6.Panel1.Controls.Add(splitContainer14);
+            // 
+            // splitContainer6.Panel2
+            // 
+            splitContainer6.Panel2.Controls.Add(splitContainer7);
+            splitContainer6.Size = new Size(586, 603);
+            splitContainer6.SplitterDistance = 91;
+            splitContainer6.TabIndex = 0;
+            // 
+            // splitContainer14
+            // 
+            splitContainer14.Dock = DockStyle.Fill;
+            splitContainer14.Location = new Point(0, 0);
+            splitContainer14.Name = "splitContainer14";
+            // 
+            // splitContainer14.Panel1
+            // 
+            splitContainer14.Panel1.Controls.Add(splitContainer15);
+            // 
+            // splitContainer14.Panel2
+            // 
+            splitContainer14.Panel2.Controls.Add(PriorityOptionsPanel);
+            splitContainer14.Size = new Size(586, 91);
+            splitContainer14.SplitterDistance = 286;
+            splitContainer14.TabIndex = 0;
+            // 
+            // splitContainer15
+            // 
+            splitContainer15.Dock = DockStyle.Fill;
+            splitContainer15.Location = new Point(0, 0);
+            splitContainer15.Name = "splitContainer15";
+            splitContainer15.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer15.Panel1
+            // 
+            splitContainer15.Panel1.Controls.Add(splitContainer11);
+            // 
+            // splitContainer15.Panel2
+            // 
+            splitContainer15.Panel2.Controls.Add(splitContainer16);
+            splitContainer15.Size = new Size(286, 91);
+            splitContainer15.SplitterDistance = 26;
+            splitContainer15.TabIndex = 0;
             // 
             // splitContainer11
             // 
@@ -234,8 +331,8 @@
             // splitContainer11.Panel2
             // 
             splitContainer11.Panel2.Controls.Add(IDTextBox);
-            splitContainer11.Size = new Size(586, 29);
-            splitContainer11.SplitterDistance = 195;
+            splitContainer11.Size = new Size(286, 26);
+            splitContainer11.SplitterDistance = 95;
             splitContainer11.TabIndex = 0;
             // 
             // label3
@@ -254,27 +351,26 @@
             IDTextBox.Location = new Point(0, 0);
             IDTextBox.Name = "IDTextBox";
             IDTextBox.ReadOnly = true;
-            IDTextBox.Size = new Size(387, 27);
+            IDTextBox.Size = new Size(187, 27);
             IDTextBox.TabIndex = 0;
             // 
-            // splitContainer5
+            // splitContainer16
             // 
-            splitContainer5.Dock = DockStyle.Fill;
-            splitContainer5.IsSplitterFixed = true;
-            splitContainer5.Location = new Point(0, 0);
-            splitContainer5.Name = "splitContainer5";
-            splitContainer5.Orientation = Orientation.Horizontal;
+            splitContainer16.Dock = DockStyle.Fill;
+            splitContainer16.Location = new Point(0, 0);
+            splitContainer16.Name = "splitContainer16";
+            splitContainer16.Orientation = Orientation.Horizontal;
             // 
-            // splitContainer5.Panel1
+            // splitContainer16.Panel1
             // 
-            splitContainer5.Panel1.Controls.Add(splitContainer12);
+            splitContainer16.Panel1.Controls.Add(splitContainer12);
             // 
-            // splitContainer5.Panel2
+            // splitContainer16.Panel2
             // 
-            splitContainer5.Panel2.Controls.Add(splitContainer6);
-            splitContainer5.Size = new Size(586, 570);
-            splitContainer5.SplitterDistance = 30;
-            splitContainer5.TabIndex = 0;
+            splitContainer16.Panel2.Controls.Add(splitContainer13);
+            splitContainer16.Size = new Size(286, 61);
+            splitContainer16.SplitterDistance = 28;
+            splitContainer16.TabIndex = 0;
             // 
             // splitContainer12
             // 
@@ -290,8 +386,8 @@
             // splitContainer12.Panel2
             // 
             splitContainer12.Panel2.Controls.Add(DatetimeTextBox);
-            splitContainer12.Size = new Size(586, 30);
-            splitContainer12.SplitterDistance = 195;
+            splitContainer12.Size = new Size(286, 28);
+            splitContainer12.SplitterDistance = 95;
             splitContainer12.TabIndex = 0;
             // 
             // label4
@@ -310,27 +406,8 @@
             DatetimeTextBox.Location = new Point(0, 0);
             DatetimeTextBox.Name = "DatetimeTextBox";
             DatetimeTextBox.ReadOnly = true;
-            DatetimeTextBox.Size = new Size(387, 27);
+            DatetimeTextBox.Size = new Size(187, 27);
             DatetimeTextBox.TabIndex = 0;
-            // 
-            // splitContainer6
-            // 
-            splitContainer6.Dock = DockStyle.Fill;
-            splitContainer6.IsSplitterFixed = true;
-            splitContainer6.Location = new Point(0, 0);
-            splitContainer6.Name = "splitContainer6";
-            splitContainer6.Orientation = Orientation.Horizontal;
-            // 
-            // splitContainer6.Panel1
-            // 
-            splitContainer6.Panel1.Controls.Add(splitContainer13);
-            // 
-            // splitContainer6.Panel2
-            // 
-            splitContainer6.Panel2.Controls.Add(splitContainer7);
-            splitContainer6.Size = new Size(586, 536);
-            splitContainer6.SplitterDistance = 27;
-            splitContainer6.TabIndex = 0;
             // 
             // splitContainer13
             // 
@@ -346,8 +423,8 @@
             // splitContainer13.Panel2
             // 
             splitContainer13.Panel2.Controls.Add(OrderStatusComboBox);
-            splitContainer13.Size = new Size(586, 27);
-            splitContainer13.SplitterDistance = 195;
+            splitContainer13.Size = new Size(286, 29);
+            splitContainer13.SplitterDistance = 95;
             splitContainer13.TabIndex = 0;
             // 
             // label5
@@ -366,9 +443,98 @@
             OrderStatusComboBox.FormattingEnabled = true;
             OrderStatusComboBox.Location = new Point(0, 0);
             OrderStatusComboBox.Name = "OrderStatusComboBox";
-            OrderStatusComboBox.Size = new Size(387, 28);
+            OrderStatusComboBox.Size = new Size(187, 28);
             OrderStatusComboBox.TabIndex = 0;
             OrderStatusComboBox.SelectedIndexChanged += OrderStatusComboBox_SelectedIndexChanged;
+            // 
+            // PriorityOptionsPanel
+            // 
+            PriorityOptionsPanel.Controls.Add(splitContainer17);
+            PriorityOptionsPanel.Dock = DockStyle.Fill;
+            PriorityOptionsPanel.Location = new Point(0, 0);
+            PriorityOptionsPanel.Name = "PriorityOptionsPanel";
+            PriorityOptionsPanel.Size = new Size(296, 91);
+            PriorityOptionsPanel.TabIndex = 0;
+            // 
+            // splitContainer17
+            // 
+            splitContainer17.Dock = DockStyle.Fill;
+            splitContainer17.Location = new Point(0, 0);
+            splitContainer17.Name = "splitContainer17";
+            splitContainer17.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer17.Panel1
+            // 
+            splitContainer17.Panel1.Controls.Add(label1);
+            // 
+            // splitContainer17.Panel2
+            // 
+            splitContainer17.Panel2.Controls.Add(splitContainer18);
+            splitContainer17.Size = new Size(296, 91);
+            splitContainer17.SplitterDistance = 25;
+            splitContainer17.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(120, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Priority Options";
+            // 
+            // splitContainer18
+            // 
+            splitContainer18.Dock = DockStyle.Fill;
+            splitContainer18.Location = new Point(0, 0);
+            splitContainer18.Name = "splitContainer18";
+            splitContainer18.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer18.Panel1
+            // 
+            splitContainer18.Panel1.Controls.Add(splitContainer19);
+            splitContainer18.Size = new Size(296, 62);
+            splitContainer18.SplitterDistance = 28;
+            splitContainer18.TabIndex = 0;
+            // 
+            // splitContainer19
+            // 
+            splitContainer19.Dock = DockStyle.Fill;
+            splitContainer19.Location = new Point(0, 0);
+            splitContainer19.Name = "splitContainer19";
+            // 
+            // splitContainer19.Panel1
+            // 
+            splitContainer19.Panel1.Controls.Add(label2);
+            // 
+            // splitContainer19.Panel2
+            // 
+            splitContainer19.Panel2.Controls.Add(TimeComboBox);
+            splitContainer19.Size = new Size(296, 28);
+            splitContainer19.SplitterDistance = 100;
+            splitContainer19.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(103, 20);
+            label2.TabIndex = 0;
+            label2.Text = "Delivery Time:";
+            // 
+            // TimeComboBox
+            // 
+            TimeComboBox.Dock = DockStyle.Fill;
+            TimeComboBox.FormattingEnabled = true;
+            TimeComboBox.Location = new Point(0, 0);
+            TimeComboBox.Name = "TimeComboBox";
+            TimeComboBox.Size = new Size(192, 28);
+            TimeComboBox.TabIndex = 0;
+            TimeComboBox.SelectedIndexChanged += TimeComboBox_SelectedIndexChanged;
             // 
             // splitContainer7
             // 
@@ -385,8 +551,8 @@
             // splitContainer7.Panel2
             // 
             splitContainer7.Panel2.Controls.Add(splitContainer8);
-            splitContainer7.Size = new Size(586, 505);
-            splitContainer7.SplitterDistance = 240;
+            splitContainer7.Size = new Size(586, 508);
+            splitContainer7.SplitterDistance = 241;
             splitContainer7.TabIndex = 0;
             // 
             // addressControl1
@@ -396,7 +562,7 @@
             addressControl1.Margin = new Padding(3, 4, 3, 4);
             addressControl1.MinimumSize = new Size(0, 200);
             addressControl1.Name = "addressControl1";
-            addressControl1.Size = new Size(586, 240);
+            addressControl1.Size = new Size(586, 241);
             addressControl1.TabIndex = 0;
             // 
             // splitContainer8
@@ -414,7 +580,7 @@
             // splitContainer8.Panel2
             // 
             splitContainer8.Panel2.Controls.Add(splitContainer9);
-            splitContainer8.Size = new Size(586, 261);
+            splitContainer8.Size = new Size(586, 263);
             splitContainer8.SplitterDistance = 29;
             splitContainer8.TabIndex = 0;
             // 
@@ -444,8 +610,8 @@
             // splitContainer9.Panel2
             // 
             splitContainer9.Panel2.Controls.Add(splitContainer10);
-            splitContainer9.Size = new Size(586, 228);
-            splitContainer9.SplitterDistance = 149;
+            splitContainer9.Size = new Size(586, 230);
+            splitContainer9.SplitterDistance = 150;
             splitContainer9.TabIndex = 0;
             // 
             // OrdersListBox
@@ -454,7 +620,7 @@
             OrdersListBox.FormattingEnabled = true;
             OrdersListBox.Location = new Point(0, 0);
             OrdersListBox.Name = "OrdersListBox";
-            OrdersListBox.Size = new Size(586, 149);
+            OrdersListBox.Size = new Size(586, 150);
             OrdersListBox.TabIndex = 0;
             // 
             // splitContainer10
@@ -472,7 +638,7 @@
             // splitContainer10.Panel2
             // 
             splitContainer10.Panel2.Controls.Add(AmountNumberLabel);
-            splitContainer10.Size = new Size(586, 75);
+            splitContainer10.Size = new Size(586, 76);
             splitContainer10.SplitterDistance = 25;
             splitContainer10.TabIndex = 0;
             // 
@@ -521,35 +687,59 @@
             splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
-            splitContainer4.Panel1.ResumeLayout(false);
             splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
             splitContainer4.ResumeLayout(false);
+            splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer5).EndInit();
+            splitContainer5.ResumeLayout(false);
+            splitContainer6.Panel1.ResumeLayout(false);
+            splitContainer6.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
+            splitContainer6.ResumeLayout(false);
+            splitContainer14.Panel1.ResumeLayout(false);
+            splitContainer14.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer14).EndInit();
+            splitContainer14.ResumeLayout(false);
+            splitContainer15.Panel1.ResumeLayout(false);
+            splitContainer15.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer15).EndInit();
+            splitContainer15.ResumeLayout(false);
             splitContainer11.Panel1.ResumeLayout(false);
             splitContainer11.Panel1.PerformLayout();
             splitContainer11.Panel2.ResumeLayout(false);
             splitContainer11.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer11).EndInit();
             splitContainer11.ResumeLayout(false);
-            splitContainer5.Panel1.ResumeLayout(false);
-            splitContainer5.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer5).EndInit();
-            splitContainer5.ResumeLayout(false);
+            splitContainer16.Panel1.ResumeLayout(false);
+            splitContainer16.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer16).EndInit();
+            splitContainer16.ResumeLayout(false);
             splitContainer12.Panel1.ResumeLayout(false);
             splitContainer12.Panel1.PerformLayout();
             splitContainer12.Panel2.ResumeLayout(false);
             splitContainer12.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer12).EndInit();
             splitContainer12.ResumeLayout(false);
-            splitContainer6.Panel1.ResumeLayout(false);
-            splitContainer6.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer6).EndInit();
-            splitContainer6.ResumeLayout(false);
             splitContainer13.Panel1.ResumeLayout(false);
             splitContainer13.Panel1.PerformLayout();
             splitContainer13.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer13).EndInit();
             splitContainer13.ResumeLayout(false);
+            PriorityOptionsPanel.ResumeLayout(false);
+            splitContainer17.Panel1.ResumeLayout(false);
+            splitContainer17.Panel1.PerformLayout();
+            splitContainer17.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer17).EndInit();
+            splitContainer17.ResumeLayout(false);
+            splitContainer18.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer18).EndInit();
+            splitContainer18.ResumeLayout(false);
+            splitContainer19.Panel1.ResumeLayout(false);
+            splitContainer19.Panel1.PerformLayout();
+            splitContainer19.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer19).EndInit();
+            splitContainer19.ResumeLayout(false);
             splitContainer7.Panel1.ResumeLayout(false);
             splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer7).EndInit();
@@ -602,5 +792,15 @@
         private Label label7;
         private Label AmountNumberLabel;
         private ComboBox OrderStatusComboBox;
+        private SplitContainer splitContainer14;
+        private SplitContainer splitContainer15;
+        private SplitContainer splitContainer16;
+        private Panel PriorityOptionsPanel;
+        private SplitContainer splitContainer17;
+        private Label label1;
+        private SplitContainer splitContainer18;
+        private SplitContainer splitContainer19;
+        private Label label2;
+        private ComboBox TimeComboBox;
     }
 }

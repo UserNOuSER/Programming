@@ -30,12 +30,10 @@ namespace ObjectOrientedPractics
                 case 3:
                     ordersTab1.RefreshData();
                     break;
+                case 4:
+                    priorityOrdersTab1.UpdateInfo(); 
+                    break;
             }
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

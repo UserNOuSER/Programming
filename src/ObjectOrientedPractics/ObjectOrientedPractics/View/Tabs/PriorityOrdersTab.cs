@@ -61,7 +61,7 @@ namespace ObjectOrientedPractics
         /// <summary>
         ///  Обновлние листбокса и строки с суммарной стоимостью 
         /// </summary>
-        private void UpdateInfo()
+        public void UpdateInfo()
         {
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _order.Items;

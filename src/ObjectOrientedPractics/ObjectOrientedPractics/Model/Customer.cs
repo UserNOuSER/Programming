@@ -22,6 +22,10 @@
         /// </summary>
         private Cart _cart;
         /// <summary>
+        /// Приоритетность покупателя
+        /// </summary>
+        private bool _isPriority;
+        /// <summary>
         /// Список заказов покупателя
         /// </summary>
         private List<Order> _orders;
@@ -65,6 +69,14 @@
             set { _cart = value; } 
         }
         /// <summary>
+        /// Возвращает и задает приоритетность покупателя
+        /// </summary>
+        public bool IsPriority
+        {
+            get => _isPriority;
+            set => _isPriority = value;
+        }
+        /// <summary>
         /// Возвращает и задает заказы покупателя
         /// </summary>
         public List<Order> Orders 
@@ -79,6 +91,7 @@
         /// <param name="Address">Адрес покупателя.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
         /// <param name="Cart">Корзина покупателя</param>
+        /// <param name="IsPriority">Приоритетность покупателя</param>
         /// <param name="Orders">Заказы покупателя</param>
         public Customer()
         {
@@ -86,7 +99,9 @@
             Fullname = "Fullname";
             Address = new();
             Cart = new();
+            IsPriority = false;
             Orders = [];
+
         }
         /// <summary>
         /// Создаёт экземпляр класса <see cref="Customer"/>.
@@ -95,6 +110,7 @@
         /// <param name="Info">Адрес покупателя.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
         /// <param name="Cart">Корзина покупателя</param>
+        /// <param name="IsPriority">Приоритетность покупателя</param>
         /// <param name="Orders">Заказы покупателя</param>
         public Customer(string fullname, Address address)
         {
@@ -102,6 +118,7 @@
             Fullname = fullname;
             Address = address;
             Cart = new();
+            IsPriority = false;
             Orders = [];
         }
         /// <summary>

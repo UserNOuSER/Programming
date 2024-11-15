@@ -27,8 +27,8 @@ namespace ObjectOrientedPractics
 
         private void OrdersTab_Load(object sender, EventArgs e)
         {
-            RefreshData();
             OrderStatusComboBox.DataSource = Enum.GetValues(typeof(OrderStatus));
+            TimeComboBox.DataSource = PriorityOrder.TimeRangesList;
         }
 
         private void OrdersDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -45,6 +45,15 @@ namespace ObjectOrientedPractics
             else
             {
                 Order order = _orders[OrdersDataGridView.CurrentRow.Index];
+                if (order is PriorityOrder priorityOrder)
+                {
+                    PriorityOptionsPanel.Visible = true;
+                    TimeComboBox.SelectedItem = priorityOrder.WantedTime;
+                }
+                else
+                {
+                    PriorityOptionsPanel.Visible = false;
+                }
                 IDTextBox.Text = order.Id.ToString();
                 DatetimeTextBox.Text = order.DateTime.ToString();
                 OrderStatusComboBox.SelectedItem = order.OrderStatus;
@@ -58,6 +67,15 @@ namespace ObjectOrientedPractics
             if (OrdersDataGridView.CurrentRow == null) { return; }
             Order order = _orders[OrdersDataGridView.CurrentRow.Index];
             order.OrderStatus = (OrderStatus)OrderStatusComboBox.SelectedItem;
+        }
+        private void TimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (OrdersDataGridView.CurrentRow == null) { return; }
+
+            if (_orders[OrdersDataGridView.CurrentRow.Index] is PriorityOrder priority)
+            {
+                priority.WantedTime = (string)TimeComboBox.SelectedItem;
+            }
         }
         /// <summary>
         /// Обновление данных в таблице

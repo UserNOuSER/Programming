@@ -53,6 +53,7 @@
             IDTextBox.Text = _currentCustomer.Id.ToString();
             FullnameTextBox.Text = _currentCustomer.Fullname.ToString();
             AddressControl1.Address = _currentCustomer.Address;
+            PriorityCheckBox.Checked = _currentCustomer.IsPriority;
 
 
             CustomersListBox.DataSource = null;
@@ -83,6 +84,8 @@
                 FullnameTextBox.BackColor = Color.Tomato;
                 _isDataCorrect = false;
             }
+            _currentCustomer.IsPriority = PriorityCheckBox.Checked;
+
 
 
         }
@@ -107,6 +110,11 @@
             _customers.Add(customer);
             CustomersListBox.DataSource = null;
             CustomersListBox.DataSource = _customers;
+        }
+
+        private void PriorityCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentCustomer.IsPriority = PriorityCheckBox.Checked;
         }
     }
 }

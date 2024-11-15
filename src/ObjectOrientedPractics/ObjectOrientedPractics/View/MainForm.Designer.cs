@@ -136,7 +136,6 @@ namespace ObjectOrientedPractics
             tabPage3.TabIndex = 3;
             tabPage3.Text = "Order Tab";
             tabPage3.UseVisualStyleBackColor = true;
-            tabPage3.Click += tabPage3_Click;
             // 
             // ordersTab1
             // 
@@ -144,7 +143,7 @@ namespace ObjectOrientedPractics
             ordersTab1.Dock = DockStyle.Fill;
             ordersTab1.Location = new Point(3, 3);
             ordersTab1.Name = "ordersTab1";
-            ordersTab1.Size = new Size(1065, 544);
+            ordersTab1.Size = new Size(1065, 540);
             ordersTab1.TabIndex = 0;
             // 
             // PriorityOrderTab
