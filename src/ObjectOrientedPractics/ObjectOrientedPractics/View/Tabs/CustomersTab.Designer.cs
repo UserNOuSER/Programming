@@ -39,7 +39,6 @@ namespace ObjectOrientedPractics.View.Tabs
             IDTextBox = new TextBox();
             FullnameTextBox = new TextBox();
             AddRandomButton = new Button();
-            AddressControl1 = new AddressControl();
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             splitContainer3 = new SplitContainer();
@@ -54,6 +53,17 @@ namespace ObjectOrientedPractics.View.Tabs
             splitContainer11 = new SplitContainer();
             PriorityCheckBox = new CheckBox();
             splitContainer12 = new SplitContainer();
+            AddressControl1 = new AddressControl();
+            splitContainer13 = new SplitContainer();
+            panel1 = new Panel();
+            splitContainer14 = new SplitContainer();
+            label1 = new Label();
+            splitContainer15 = new SplitContainer();
+            DiscountsListBox = new ListBox();
+            splitContainer16 = new SplitContainer();
+            splitContainer17 = new SplitContainer();
+            AddDiscountButton = new Button();
+            RemoveDiscountButton = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -100,7 +110,27 @@ namespace ObjectOrientedPractics.View.Tabs
             splitContainer11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer12).BeginInit();
             splitContainer12.Panel1.SuspendLayout();
+            splitContainer12.Panel2.SuspendLayout();
             splitContainer12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer13).BeginInit();
+            splitContainer13.Panel1.SuspendLayout();
+            splitContainer13.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer14).BeginInit();
+            splitContainer14.Panel1.SuspendLayout();
+            splitContainer14.Panel2.SuspendLayout();
+            splitContainer14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer15).BeginInit();
+            splitContainer15.Panel1.SuspendLayout();
+            splitContainer15.Panel2.SuspendLayout();
+            splitContainer15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer16).BeginInit();
+            splitContainer16.Panel1.SuspendLayout();
+            splitContainer16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer17).BeginInit();
+            splitContainer17.Panel1.SuspendLayout();
+            splitContainer17.Panel2.SuspendLayout();
+            splitContainer17.SuspendLayout();
             SuspendLayout();
             // 
             // CustomersLabel
@@ -203,16 +233,6 @@ namespace ObjectOrientedPractics.View.Tabs
             AddRandomButton.Text = "AddRandom";
             AddRandomButton.UseVisualStyleBackColor = true;
             AddRandomButton.Click += AddRandomButton_Click;
-            // 
-            // AddressControl1
-            // 
-            AddressControl1.Dock = DockStyle.Fill;
-            AddressControl1.Location = new Point(0, 0);
-            AddressControl1.Margin = new Padding(3, 4, 3, 4);
-            AddressControl1.MinimumSize = new Size(0, 200);
-            AddressControl1.Name = "AddressControl1";
-            AddressControl1.Size = new Size(619, 213);
-            AddressControl1.TabIndex = 12;
             // 
             // splitContainer1
             // 
@@ -438,9 +458,154 @@ namespace ObjectOrientedPractics.View.Tabs
             // splitContainer12.Panel1
             // 
             splitContainer12.Panel1.Controls.Add(AddressControl1);
+            // 
+            // splitContainer12.Panel2
+            // 
+            splitContainer12.Panel2.Controls.Add(splitContainer13);
             splitContainer12.Size = new Size(619, 456);
             splitContainer12.SplitterDistance = 213;
             splitContainer12.TabIndex = 13;
+            // 
+            // AddressControl1
+            // 
+            AddressControl1.Dock = DockStyle.Fill;
+            AddressControl1.Location = new Point(0, 0);
+            AddressControl1.Margin = new Padding(3, 4, 3, 4);
+            AddressControl1.MinimumSize = new Size(0, 200);
+            AddressControl1.Name = "AddressControl1";
+            AddressControl1.Size = new Size(619, 213);
+            AddressControl1.TabIndex = 0;
+            // 
+            // splitContainer13
+            // 
+            splitContainer13.Dock = DockStyle.Fill;
+            splitContainer13.Location = new Point(0, 0);
+            splitContainer13.Name = "splitContainer13";
+            splitContainer13.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer13.Panel1
+            // 
+            splitContainer13.Panel1.Controls.Add(panel1);
+            splitContainer13.Size = new Size(619, 239);
+            splitContainer13.SplitterDistance = 148;
+            splitContainer13.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(splitContainer14);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(619, 148);
+            panel1.TabIndex = 0;
+            // 
+            // splitContainer14
+            // 
+            splitContainer14.Dock = DockStyle.Fill;
+            splitContainer14.Location = new Point(0, 0);
+            splitContainer14.Name = "splitContainer14";
+            splitContainer14.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer14.Panel1
+            // 
+            splitContainer14.Panel1.Controls.Add(label1);
+            // 
+            // splitContainer14.Panel2
+            // 
+            splitContainer14.Panel2.Controls.Add(splitContainer15);
+            splitContainer14.Size = new Size(619, 148);
+            splitContainer14.SplitterDistance = 25;
+            splitContainer14.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Discounts";
+            // 
+            // splitContainer15
+            // 
+            splitContainer15.Dock = DockStyle.Fill;
+            splitContainer15.Location = new Point(0, 0);
+            splitContainer15.Name = "splitContainer15";
+            // 
+            // splitContainer15.Panel1
+            // 
+            splitContainer15.Panel1.Controls.Add(DiscountsListBox);
+            // 
+            // splitContainer15.Panel2
+            // 
+            splitContainer15.Panel2.Controls.Add(splitContainer16);
+            splitContainer15.Size = new Size(619, 119);
+            splitContainer15.SplitterDistance = 338;
+            splitContainer15.TabIndex = 0;
+            // 
+            // DiscountsListBox
+            // 
+            DiscountsListBox.Dock = DockStyle.Fill;
+            DiscountsListBox.FormattingEnabled = true;
+            DiscountsListBox.Location = new Point(0, 0);
+            DiscountsListBox.Name = "DiscountsListBox";
+            DiscountsListBox.Size = new Size(338, 119);
+            DiscountsListBox.TabIndex = 0;
+            // 
+            // splitContainer16
+            // 
+            splitContainer16.Dock = DockStyle.Fill;
+            splitContainer16.Location = new Point(0, 0);
+            splitContainer16.Name = "splitContainer16";
+            // 
+            // splitContainer16.Panel1
+            // 
+            splitContainer16.Panel1.Controls.Add(splitContainer17);
+            splitContainer16.Size = new Size(277, 119);
+            splitContainer16.SplitterDistance = 138;
+            splitContainer16.TabIndex = 0;
+            // 
+            // splitContainer17
+            // 
+            splitContainer17.Dock = DockStyle.Fill;
+            splitContainer17.Location = new Point(0, 0);
+            splitContainer17.Name = "splitContainer17";
+            splitContainer17.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer17.Panel1
+            // 
+            splitContainer17.Panel1.Controls.Add(AddDiscountButton);
+            // 
+            // splitContainer17.Panel2
+            // 
+            splitContainer17.Panel2.Controls.Add(RemoveDiscountButton);
+            splitContainer17.Size = new Size(138, 119);
+            splitContainer17.SplitterDistance = 56;
+            splitContainer17.TabIndex = 0;
+            // 
+            // AddDiscountButton
+            // 
+            AddDiscountButton.Dock = DockStyle.Fill;
+            AddDiscountButton.Location = new Point(0, 0);
+            AddDiscountButton.Name = "AddDiscountButton";
+            AddDiscountButton.Size = new Size(138, 56);
+            AddDiscountButton.TabIndex = 0;
+            AddDiscountButton.Text = "Add";
+            AddDiscountButton.UseVisualStyleBackColor = true;
+            AddDiscountButton.Click += AddDiscountButton_Click;
+            // 
+            // RemoveDiscountButton
+            // 
+            RemoveDiscountButton.Dock = DockStyle.Fill;
+            RemoveDiscountButton.Location = new Point(0, 0);
+            RemoveDiscountButton.Name = "RemoveDiscountButton";
+            RemoveDiscountButton.Size = new Size(138, 59);
+            RemoveDiscountButton.TabIndex = 0;
+            RemoveDiscountButton.Text = "Remove";
+            RemoveDiscountButton.UseVisualStyleBackColor = true;
+            RemoveDiscountButton.Click += RemoveDiscountButton_Click;
             // 
             // CustomersTab
             // 
@@ -505,8 +670,29 @@ namespace ObjectOrientedPractics.View.Tabs
             ((System.ComponentModel.ISupportInitialize)splitContainer11).EndInit();
             splitContainer11.ResumeLayout(false);
             splitContainer12.Panel1.ResumeLayout(false);
+            splitContainer12.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer12).EndInit();
             splitContainer12.ResumeLayout(false);
+            splitContainer13.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer13).EndInit();
+            splitContainer13.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            splitContainer14.Panel1.ResumeLayout(false);
+            splitContainer14.Panel1.PerformLayout();
+            splitContainer14.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer14).EndInit();
+            splitContainer14.ResumeLayout(false);
+            splitContainer15.Panel1.ResumeLayout(false);
+            splitContainer15.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer15).EndInit();
+            splitContainer15.ResumeLayout(false);
+            splitContainer16.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer16).EndInit();
+            splitContainer16.ResumeLayout(false);
+            splitContainer17.Panel1.ResumeLayout(false);
+            splitContainer17.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer17).EndInit();
+            splitContainer17.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -523,7 +709,6 @@ namespace ObjectOrientedPractics.View.Tabs
         private TextBox IDTextBox;
         private TextBox FullnameTextBox;
         private Button AddRandomButton;
-        private AddressControl AddressControl1;
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
         private SplitContainer splitContainer3;
@@ -538,5 +723,16 @@ namespace ObjectOrientedPractics.View.Tabs
         private SplitContainer splitContainer11;
         private CheckBox PriorityCheckBox;
         private SplitContainer splitContainer12;
+        private AddressControl AddressControl1;
+        private SplitContainer splitContainer13;
+        private Panel panel1;
+        private SplitContainer splitContainer14;
+        private SplitContainer splitContainer15;
+        private SplitContainer splitContainer16;
+        private SplitContainer splitContainer17;
+        private Label label1;
+        private ListBox DiscountsListBox;
+        private Button AddDiscountButton;
+        private Button RemoveDiscountButton;
     }
 }

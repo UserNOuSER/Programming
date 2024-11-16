@@ -88,6 +88,9 @@ namespace ObjectOrientedPractics.Model
             get { return _orders; }
             set { _orders = value; }
         }
+        /// <summary>
+        /// Создает и возвращает список скидок
+        /// </summary>
         public List<IDiscount> Discounts { get; set; }
         /// <summary>
         /// Создаёт пустой экземпляр класса <see cref="Customer"/>.

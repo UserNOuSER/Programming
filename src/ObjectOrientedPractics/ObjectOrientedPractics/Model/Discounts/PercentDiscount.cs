@@ -124,5 +124,13 @@ namespace ObjectOrientedPractics.Model.Discounts
                 _percent = (int)Math.Ceiling(Total / 1000);
             }
         }
+        /// <summary>
+        /// Переназначение ToString
+        /// </summary>
+        /// <returns>Возвращает Info </returns>
+        public override string ToString()
+        {
+            return Info;
+        }
     }
 }

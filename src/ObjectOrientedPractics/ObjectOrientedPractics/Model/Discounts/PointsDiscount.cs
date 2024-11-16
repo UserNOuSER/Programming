@@ -77,5 +77,13 @@
             }
             _points += Math.Ceiling(amounts * 0.1);
         }
+        /// <summary>
+        /// Переназначение ToString
+        /// </summary>
+        /// <returns>Возвращает Info </returns>
+        public override string ToString()
+        {
+            return Info;
+        }
     }
 }
