@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.Model.Enums;
+
+namespace ObjectOrientedPractics.Model.Discounts
 {
     public class PercentDiscount : IDiscount
     {
@@ -32,7 +34,7 @@
         /// Возвращает суммарные траты 
         /// </summary>
         public double Total
-        { 
+        {
             get { return _total; }
         }
         /// <summary>
@@ -73,7 +75,7 @@
             {
                 if (item.Category == Category)
                 {
-                    amounts += item.Cost *  Percent;
+                    amounts += item.Cost * Percent;
                 }
             }
             return amounts;

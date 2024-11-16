@@ -1,6 +1,8 @@
 ﻿using Bogus;
+using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Model.Enums;
 
-namespace ObjectOrientedPractics
+namespace ObjectOrientedPractics.Services
 {
     /// <summary>
     /// Класс, создающий товар со случайными данными.
@@ -11,8 +13,9 @@ namespace ObjectOrientedPractics
         /// Генерирует товар со случайными данными и возвращает его.
         /// </summary>
         /// <returns>Item</returns>
-        public static Item GetItem() 
-        {;
+        public static Item GetItem()
+        {
+            ;
             var faker = new Faker();
             Item item = new(faker.Commerce.Product().ToString(),
                             faker.Commerce.ProductDescription().ToString(),

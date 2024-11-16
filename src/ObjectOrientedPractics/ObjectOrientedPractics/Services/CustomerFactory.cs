@@ -1,5 +1,6 @@
 ﻿using Bogus;
-namespace ObjectOrientedPractics
+using ObjectOrientedPractics.Model;
+namespace ObjectOrientedPractics.Services
 {
     /// <summary>
     /// Класс, создающий покупателя со случайными данными.
@@ -10,11 +11,11 @@ namespace ObjectOrientedPractics
         /// Генерирует покупателя со случайными данными и возвращает его.
         /// </summary>
         /// <returns>Customer</returns>
-        public static Customer GenerateCustomer() 
+        public static Customer GenerateCustomer()
         {
             var faker = new Faker();
             Customer customer = new(faker.Name.FullName(),
-                                    new Address(faker.Address.ZipCode(format: "######") , faker.Address.Country(), faker.Address.City(),
+                                    new Address(faker.Address.ZipCode(format: "######"), faker.Address.Country(), faker.Address.City(),
                                     faker.Address.StreetName(), faker.Address.BuildingNumber(), faker.Address.SecondaryAddress()));
             return customer;
         }

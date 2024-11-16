@@ -1,4 +1,7 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.Model.Enums;
+using ObjectOrientedPractics.Services;
+
+namespace ObjectOrientedPractics.Model.Orders
 {
     public class Order
     {
@@ -29,16 +32,16 @@
         /// <summary>
         /// Возвращает уникальный идентификатор
         /// </summary>
-        public int Id 
-        { 
-            get { return _id; } 
+        public int Id
+        {
+            get { return _id; }
         }
         /// <summary>
         /// Возвращает время создания заказа
         /// </summary>
-        public DateTime DateTime 
-        { 
-            get { return _dateTime; } 
+        public DateTime DateTime
+        {
+            get { return _dateTime; }
         }
         /// <summary>
         /// Возвращает суммарную стоимость
@@ -48,7 +51,7 @@
             get
             {
                 _amount = 0.0;
-                if ((Items != null) & (Items.Count != 0))
+                if (Items != null & Items.Count != 0)
                 {
                     foreach (var item in Items)
                     {
@@ -61,7 +64,7 @@
         /// <summary>
         /// Возвращает и задает адрес заказа
         /// </summary>
-        public Address Address 
+        public Address Address
         {
             get { return _address; }
             set { _address = value; }
@@ -73,6 +76,14 @@
         {
             get { return _items; }
             set { _items = value; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public double DiscountAmount { get; set; }
+        public double Total
+        {
+            get { return Amount - DiscountAmount; }
         }
         /// <summary>
         /// Возвращает и задает статус заказа

@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedPractics
+﻿namespace ObjectOrientedPractics.View.Tabs.Controls
 {
     partial class AddressControl
     {

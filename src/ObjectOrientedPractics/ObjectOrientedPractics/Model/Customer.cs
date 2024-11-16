@@ -1,4 +1,8 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.Model.Discounts;
+using ObjectOrientedPractics.Model.Orders;
+using ObjectOrientedPractics.Services;
+
+namespace ObjectOrientedPractics.Model
 {
     /// <summary>
     /// Хранит данные о покупателе.
@@ -63,10 +67,10 @@
         /// <summary>
         /// Возвращает и задает корзину покупателя
         /// </summary>
-        public Cart Cart 
+        public Cart Cart
         {
             get { return _cart; }
-            set { _cart = value; } 
+            set { _cart = value; }
         }
         /// <summary>
         /// Возвращает и задает приоритетность покупателя
@@ -79,11 +83,12 @@
         /// <summary>
         /// Возвращает и задает заказы покупателя
         /// </summary>
-        public List<Order> Orders 
-        { 
-            get { return _orders; } 
+        public List<Order> Orders
+        {
+            get { return _orders; }
             set { _orders = value; }
         }
+        public List<IDiscount> Discounts { get; set; }
         /// <summary>
         /// Создаёт пустой экземпляр класса <see cref="Customer"/>.
         /// </summary>
@@ -101,6 +106,7 @@
             Cart = new();
             IsPriority = false;
             Orders = [];
+            Discounts = [new PointsDiscount()];
 
         }
         /// <summary>
@@ -120,6 +126,7 @@
             Cart = new();
             IsPriority = false;
             Orders = [];
+            Discounts = [new PointsDiscount()];
         }
         /// <summary>
         /// Возвращает имя покупателя

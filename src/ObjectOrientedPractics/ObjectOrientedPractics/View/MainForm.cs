@@ -1,4 +1,7 @@
-namespace ObjectOrientedPractics
+using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.View.Tabs;
+
+namespace ObjectOrientedPractics.View
 {
     public partial class MainForm : Form
     {

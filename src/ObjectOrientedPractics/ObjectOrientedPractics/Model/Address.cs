@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.Services;
+
+namespace ObjectOrientedPractics.Model
 {
     public class Address
     {
@@ -77,10 +79,10 @@
         public string Street
         {
             get { return _street; }
-            set 
-            { 
+            set
+            {
                 ValueValidator.AssertStringOnLenght(value, 100, nameof(Street));
-                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Street));  
+                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Street));
                 _street = value;
             }
         }
@@ -90,10 +92,10 @@
         public string Building
         {
             get { return _building; }
-            set 
-            { 
+            set
+            {
                 ValueValidator.AssertStringOnLenght(value, 10, nameof(Building));
-                ValueValidator.CheckStringOnNullOrEmpty(value,  nameof(Building));
+                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Building));
                 _building = value;
             }
         }

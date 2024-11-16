@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedPractics
+﻿namespace ObjectOrientedPractics.Model.Discounts
 {
     public class PointsDiscount : IDiscount
     {
@@ -26,7 +26,7 @@
         public string Info
         {
             get { return $"Накопительная – {Points} баллов"; }
-            
+
         }
         /// <summary>
         /// Создает пустой экземпляр класса

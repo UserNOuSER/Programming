@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedPractics
+﻿namespace ObjectOrientedPractics.Model.Orders
 {
     class PriorityOrder : Order
     {
@@ -21,16 +21,16 @@
         /// <summary>
         /// Возвращает и задает предпочтителную дату
         /// </summary>
-        public DateTime WantedDate 
+        public DateTime WantedDate
         {
-            get {  return _wantedDate; }
-            set 
-            { 
+            get { return _wantedDate; }
+            set
+            {
                 if (value < DateTime.Now)
                 {
                     throw new ArgumentException($"{nameof(WantedDate)} должно быть завтра или далее");
                 }
-                _wantedDate = value; 
+                _wantedDate = value;
             }
         }
         /// <summary>
@@ -39,13 +39,13 @@
         public string WantedTime
         {
             get { return _wantedTime; }
-            set 
+            set
             {
                 if (!_timerangesList.Contains(value))
                 {
                     throw new ArgumentException($"{nameof(WantedTime)} не содержится в списке возможных.");
                 }
-                _wantedTime = value; 
+                _wantedTime = value;
             }
         }
         /// <summary>

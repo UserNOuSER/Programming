@@ -1,6 +1,4 @@
-﻿using System.Drawing.Text;
-
-namespace ObjectOrientedPractics
+﻿namespace ObjectOrientedPractics.Model
 {
     public class Cart
     {
@@ -28,15 +26,15 @@ namespace ObjectOrientedPractics
             get
             {
                 _amount = 0.0;
-                if (!((Items == null) || (Items.Count == 0)))
+                if (!(Items == null || Items.Count == 0))
                 {
                     for (int i = 0; i < Items.Count; i++)
                     {
                         _amount += Items[i].Cost;
                     }
-                }                
+                }
                 return _amount;
-                
+
             }
 
         }

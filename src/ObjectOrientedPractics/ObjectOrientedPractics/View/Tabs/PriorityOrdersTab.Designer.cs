@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.View.Tabs.Controls;
+
+namespace ObjectOrientedPractics.View.Tabs
 {
     partial class PriorityOrdersTab
     {

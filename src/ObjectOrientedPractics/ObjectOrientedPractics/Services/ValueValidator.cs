@@ -1,5 +1,5 @@
-﻿namespace ObjectOrientedPractics
-{ 
+﻿namespace ObjectOrientedPractics.Services
+{
     /// <summary>
     /// Проверяет вводимые величины на правильность.
     /// </summary>
@@ -27,7 +27,7 @@
         /// <exception cref="ArgumentNullException">Исключение вызывается если строка пустая или равна null.</exception>
         public static void CheckStringOnNullOrEmpty(string value, string propertyName)
         {
-            if (String.IsNullOrEmpty(value))
+            if (string.IsNullOrEmpty(value))
             {
                 throw new ArgumentNullException("свойство " + propertyName + " не должно быть null или пустым");
             }

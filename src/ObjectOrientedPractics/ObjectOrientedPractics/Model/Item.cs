@@ -1,4 +1,7 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.Model.Enums;
+using ObjectOrientedPractics.Services;
+
+namespace ObjectOrientedPractics.Model
 {
     /// <summary>
     /// Хранит данные о товаре.
@@ -38,11 +41,11 @@
         /// </summary>
         public string Name
         {
-            get { return _name; } 
-            set 
-            { 
+            get { return _name; }
+            set
+            {
                 ValueValidator.AssertStringOnLenght(value, 200, nameof(Name));
-                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Name)); 
+                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Name));
                 _name = value;
             }
         }
@@ -50,9 +53,9 @@
         /// Возвращает и задает описание товара. Должно быть непустым и короче 1000 символов.
         /// </summary>
         public string Info
-        { 
-            get { return _info; } 
-            set 
+        {
+            get { return _info; }
+            set
             {
                 ValueValidator.AssertStringOnLenght(value, 1000, nameof(Info));
                 ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Info));
@@ -63,13 +66,13 @@
         /// Возвращает и задает цену товара. Должна быть больше нуля и менее 100000.
         /// </summary>
         public float Cost
-        { 
-            get { return _cost; } 
-            set 
+        {
+            get { return _cost; }
+            set
             {
                 ArgumentOutOfRangeException.ThrowIfNegative(value);
                 ArgumentOutOfRangeException.ThrowIfGreaterThan(value, 100000);
-                _cost = value; 
+                _cost = value;
             }
         }
 
@@ -99,8 +102,8 @@
         /// <param name="Category">Категория товара.</param>
         public Item(string name, string info, float cost, Category category)
         {
-            _id = IDGenerator.GetNextId();  
-            Name = name;  
+            _id = IDGenerator.GetNextId();
+            Name = name;
             Info = info;
             Cost = cost;
             Category = category;
@@ -111,5 +114,5 @@
         /// <returns>string</returns>
         public override string ToString() => _name;
     }
-    
+
 }

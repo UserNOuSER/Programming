@@ -1,4 +1,7 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Model.Orders;
+
+namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class CartsTab : UserControl
     {

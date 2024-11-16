@@ -1,4 +1,7 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Services;
+
+namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class CustomersTab : UserControl
     {

@@ -1,6 +1,9 @@
 ﻿using System.Data;
+using ObjectOrientedPractics.Model;
+using ObjectOrientedPractics.Model.Enums;
+using ObjectOrientedPractics.Model.Orders;
 
-namespace ObjectOrientedPractics
+namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class OrdersTab : UserControl
     {

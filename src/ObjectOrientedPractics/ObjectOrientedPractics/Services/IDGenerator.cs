@@ -1,4 +1,4 @@
-﻿ namespace ObjectOrientedPractics
+﻿namespace ObjectOrientedPractics.Services
 {
     /// <summary>
     /// Класс, создающий уникальные идентификаторы.

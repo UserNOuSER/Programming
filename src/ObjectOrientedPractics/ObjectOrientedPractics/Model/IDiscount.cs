@@ -1,6 +1,6 @@
-﻿namespace ObjectOrientedPractics
+﻿namespace ObjectOrientedPractics.Model
 {
-    interface IDiscount
+    public interface IDiscount
     {
         /// <summary>
         /// Возвращает информацию о скидочной системе
@@ -23,6 +23,6 @@
         /// </summary>
         /// <param name="items"></param>
         void Update(List<Item> items);
-    
+
     }
 }

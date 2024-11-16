@@ -1,6 +1,7 @@
-﻿using System.ComponentModel;
+﻿using ObjectOrientedPractics.View.Tabs;
+using System.ComponentModel;
 
-namespace ObjectOrientedPractics
+namespace ObjectOrientedPractics.View
 {
     partial class MainForm
     {
