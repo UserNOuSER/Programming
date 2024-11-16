@@ -16,7 +16,7 @@ namespace ObjectOrientedPractics
             var faker = new Faker();
             Item item = new(faker.Commerce.Product().ToString(),
                             faker.Commerce.ProductDescription().ToString(),
-                            float.Parse(faker.Commerce.Price(0, 100000)),
+                            float.Parse(faker.Commerce.Price(0, 1000)),
                             faker.PickRandom<Category>());
 
             return item;
