@@ -54,6 +54,17 @@
             splitContainer13 = new SplitContainer();
             RemoveItemButton = new Button();
             ClearCartButton = new Button();
+            splitContainer15 = new SplitContainer();
+            splitContainer16 = new SplitContainer();
+            splitContainer17 = new SplitContainer();
+            label1 = new Label();
+            DiscountsCheckedListBox = new CheckedListBox();
+            splitContainer18 = new SplitContainer();
+            label2 = new Label();
+            DiscountAmountLabel = new Label();
+            splitContainer19 = new SplitContainer();
+            label4 = new Label();
+            TotalLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -95,6 +106,7 @@
             splitContainer9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer10).BeginInit();
             splitContainer10.Panel1.SuspendLayout();
+            splitContainer10.Panel2.SuspendLayout();
             splitContainer10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer11).BeginInit();
             splitContainer11.Panel1.SuspendLayout();
@@ -107,6 +119,26 @@
             splitContainer13.Panel1.SuspendLayout();
             splitContainer13.Panel2.SuspendLayout();
             splitContainer13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer15).BeginInit();
+            splitContainer15.Panel1.SuspendLayout();
+            splitContainer15.Panel2.SuspendLayout();
+            splitContainer15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer16).BeginInit();
+            splitContainer16.Panel1.SuspendLayout();
+            splitContainer16.Panel2.SuspendLayout();
+            splitContainer16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer17).BeginInit();
+            splitContainer17.Panel1.SuspendLayout();
+            splitContainer17.Panel2.SuspendLayout();
+            splitContainer17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer18).BeginInit();
+            splitContainer18.Panel1.SuspendLayout();
+            splitContainer18.Panel2.SuspendLayout();
+            splitContainer18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer19).BeginInit();
+            splitContainer19.Panel1.SuspendLayout();
+            splitContainer19.Panel2.SuspendLayout();
+            splitContainer19.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -338,6 +370,7 @@
             // splitContainer8.Panel1
             // 
             splitContainer8.Panel1.Controls.Add(AmountLabel);
+            splitContainer8.Panel1MinSize = 20;
             // 
             // splitContainer8.Panel2
             // 
@@ -384,9 +417,9 @@
             AmountNumberLabel.Font = new Font("Bahnschrift Condensed", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 204);
             AmountNumberLabel.Location = new Point(429, 2);
             AmountNumberLabel.Name = "AmountNumberLabel";
-            AmountNumberLabel.Size = new Size(32, 41);
+            AmountNumberLabel.Size = new Size(60, 41);
             AmountNumberLabel.TabIndex = 0;
-            AmountNumberLabel.Text = "0";
+            AmountNumberLabel.Text = "435";
             // 
             // splitContainer10
             // 
@@ -399,8 +432,12 @@
             // splitContainer10.Panel1
             // 
             splitContainer10.Panel1.Controls.Add(splitContainer11);
+            // 
+            // splitContainer10.Panel2
+            // 
+            splitContainer10.Panel2.Controls.Add(splitContainer15);
             splitContainer10.Size = new Size(529, 212);
-            splitContainer10.SplitterDistance = 70;
+            splitContainer10.SplitterDistance = 37;
             splitContainer10.TabIndex = 0;
             // 
             // splitContainer11
@@ -416,7 +453,7 @@
             // splitContainer11.Panel2
             // 
             splitContainer11.Panel2.Controls.Add(splitContainer13);
-            splitContainer11.Size = new Size(529, 70);
+            splitContainer11.Size = new Size(529, 37);
             splitContainer11.SplitterDistance = 259;
             splitContainer11.TabIndex = 0;
             // 
@@ -429,7 +466,7 @@
             // splitContainer12.Panel1
             // 
             splitContainer12.Panel1.Controls.Add(CreateOrderButton);
-            splitContainer12.Size = new Size(259, 70);
+            splitContainer12.Size = new Size(259, 37);
             splitContainer12.SplitterDistance = 127;
             splitContainer12.TabIndex = 0;
             // 
@@ -438,7 +475,7 @@
             CreateOrderButton.Dock = DockStyle.Fill;
             CreateOrderButton.Location = new Point(0, 0);
             CreateOrderButton.Name = "CreateOrderButton";
-            CreateOrderButton.Size = new Size(127, 70);
+            CreateOrderButton.Size = new Size(127, 37);
             CreateOrderButton.TabIndex = 0;
             CreateOrderButton.Text = "Create Order";
             CreateOrderButton.UseVisualStyleBackColor = true;
@@ -457,7 +494,7 @@
             // splitContainer13.Panel2
             // 
             splitContainer13.Panel2.Controls.Add(ClearCartButton);
-            splitContainer13.Size = new Size(266, 70);
+            splitContainer13.Size = new Size(266, 37);
             splitContainer13.SplitterDistance = 131;
             splitContainer13.TabIndex = 0;
             // 
@@ -466,7 +503,7 @@
             RemoveItemButton.Dock = DockStyle.Fill;
             RemoveItemButton.Location = new Point(0, 0);
             RemoveItemButton.Name = "RemoveItemButton";
-            RemoveItemButton.Size = new Size(131, 70);
+            RemoveItemButton.Size = new Size(131, 37);
             RemoveItemButton.TabIndex = 0;
             RemoveItemButton.Text = "Remove Item";
             RemoveItemButton.UseVisualStyleBackColor = true;
@@ -477,11 +514,167 @@
             ClearCartButton.Dock = DockStyle.Fill;
             ClearCartButton.Location = new Point(0, 0);
             ClearCartButton.Name = "ClearCartButton";
-            ClearCartButton.Size = new Size(131, 70);
+            ClearCartButton.Size = new Size(131, 37);
             ClearCartButton.TabIndex = 0;
             ClearCartButton.Text = "Clear Cart";
             ClearCartButton.UseVisualStyleBackColor = true;
             ClearCartButton.Click += ClearCartButton_Click;
+            // 
+            // splitContainer15
+            // 
+            splitContainer15.Dock = DockStyle.Fill;
+            splitContainer15.Location = new Point(0, 0);
+            splitContainer15.Name = "splitContainer15";
+            splitContainer15.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer15.Panel1
+            // 
+            splitContainer15.Panel1.Controls.Add(splitContainer16);
+            // 
+            // splitContainer15.Panel2
+            // 
+            splitContainer15.Panel2.Controls.Add(splitContainer19);
+            splitContainer15.Size = new Size(529, 171);
+            splitContainer15.SplitterDistance = 132;
+            splitContainer15.TabIndex = 0;
+            // 
+            // splitContainer16
+            // 
+            splitContainer16.Dock = DockStyle.Fill;
+            splitContainer16.Location = new Point(0, 0);
+            splitContainer16.Name = "splitContainer16";
+            // 
+            // splitContainer16.Panel1
+            // 
+            splitContainer16.Panel1.Controls.Add(splitContainer17);
+            // 
+            // splitContainer16.Panel2
+            // 
+            splitContainer16.Panel2.Controls.Add(splitContainer18);
+            splitContainer16.Size = new Size(529, 132);
+            splitContainer16.SplitterDistance = 374;
+            splitContainer16.TabIndex = 0;
+            // 
+            // splitContainer17
+            // 
+            splitContainer17.Dock = DockStyle.Fill;
+            splitContainer17.Location = new Point(0, 0);
+            splitContainer17.Name = "splitContainer17";
+            splitContainer17.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer17.Panel1
+            // 
+            splitContainer17.Panel1.Controls.Add(label1);
+            // 
+            // splitContainer17.Panel2
+            // 
+            splitContainer17.Panel2.Controls.Add(DiscountsCheckedListBox);
+            splitContainer17.Size = new Size(374, 132);
+            splitContainer17.SplitterDistance = 25;
+            splitContainer17.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(82, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Discounts:";
+            // 
+            // DiscountsCheckedListBox
+            // 
+            DiscountsCheckedListBox.BackColor = SystemColors.Control;
+            DiscountsCheckedListBox.BorderStyle = BorderStyle.None;
+            DiscountsCheckedListBox.CheckOnClick = true;
+            DiscountsCheckedListBox.Dock = DockStyle.Fill;
+            DiscountsCheckedListBox.FormattingEnabled = true;
+            DiscountsCheckedListBox.Location = new Point(0, 0);
+            DiscountsCheckedListBox.Name = "DiscountsCheckedListBox";
+            DiscountsCheckedListBox.Size = new Size(374, 103);
+            DiscountsCheckedListBox.TabIndex = 0;
+            DiscountsCheckedListBox.MouseUp += DiscountsCheckedListBox_Click;
+            // 
+            // splitContainer18
+            // 
+            splitContainer18.Dock = DockStyle.Fill;
+            splitContainer18.Location = new Point(0, 0);
+            splitContainer18.Name = "splitContainer18";
+            splitContainer18.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer18.Panel1
+            // 
+            splitContainer18.Panel1.Controls.Add(label2);
+            // 
+            // splitContainer18.Panel2
+            // 
+            splitContainer18.Panel2.Controls.Add(DiscountAmountLabel);
+            splitContainer18.Size = new Size(151, 132);
+            splitContainer18.SplitterDistance = 66;
+            splitContainer18.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(137, 20);
+            label2.TabIndex = 0;
+            label2.Text = "Discount Amount:";
+            // 
+            // DiscountAmountLabel
+            // 
+            DiscountAmountLabel.AutoSize = true;
+            DiscountAmountLabel.Dock = DockStyle.Fill;
+            DiscountAmountLabel.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            DiscountAmountLabel.Location = new Point(0, 0);
+            DiscountAmountLabel.Name = "DiscountAmountLabel";
+            DiscountAmountLabel.Size = new Size(65, 37);
+            DiscountAmountLabel.TabIndex = 0;
+            DiscountAmountLabel.Text = "235";
+            // 
+            // splitContainer19
+            // 
+            splitContainer19.Dock = DockStyle.Fill;
+            splitContainer19.Location = new Point(0, 0);
+            splitContainer19.Name = "splitContainer19";
+            // 
+            // splitContainer19.Panel1
+            // 
+            splitContainer19.Panel1.Controls.Add(label4);
+            // 
+            // splitContainer19.Panel2
+            // 
+            splitContainer19.Panel2.Controls.Add(TotalLabel);
+            splitContainer19.Size = new Size(529, 35);
+            splitContainer19.SplitterDistance = 375;
+            splitContainer19.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Fill;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label4.Location = new Point(0, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(58, 20);
+            label4.TabIndex = 0;
+            label4.Text = "TOTAL:";
+            // 
+            // TotalLabel
+            // 
+            TotalLabel.AutoSize = true;
+            TotalLabel.Dock = DockStyle.Fill;
+            TotalLabel.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            TotalLabel.Location = new Point(0, 0);
+            TotalLabel.Name = "TotalLabel";
+            TotalLabel.Size = new Size(65, 37);
+            TotalLabel.TabIndex = 0;
+            TotalLabel.Text = "200";
             // 
             // CartsTab
             // 
@@ -536,6 +729,7 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer9).EndInit();
             splitContainer9.ResumeLayout(false);
             splitContainer10.Panel1.ResumeLayout(false);
+            splitContainer10.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer10).EndInit();
             splitContainer10.ResumeLayout(false);
             splitContainer11.Panel1.ResumeLayout(false);
@@ -549,6 +743,31 @@
             splitContainer13.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer13).EndInit();
             splitContainer13.ResumeLayout(false);
+            splitContainer15.Panel1.ResumeLayout(false);
+            splitContainer15.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer15).EndInit();
+            splitContainer15.ResumeLayout(false);
+            splitContainer16.Panel1.ResumeLayout(false);
+            splitContainer16.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer16).EndInit();
+            splitContainer16.ResumeLayout(false);
+            splitContainer17.Panel1.ResumeLayout(false);
+            splitContainer17.Panel1.PerformLayout();
+            splitContainer17.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer17).EndInit();
+            splitContainer17.ResumeLayout(false);
+            splitContainer18.Panel1.ResumeLayout(false);
+            splitContainer18.Panel1.PerformLayout();
+            splitContainer18.Panel2.ResumeLayout(false);
+            splitContainer18.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer18).EndInit();
+            splitContainer18.ResumeLayout(false);
+            splitContainer19.Panel1.ResumeLayout(false);
+            splitContainer19.Panel1.PerformLayout();
+            splitContainer19.Panel2.ResumeLayout(false);
+            splitContainer19.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer19).EndInit();
+            splitContainer19.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -580,5 +799,16 @@
         private Button RemoveItemButton;
         private Button ClearCartButton;
         private ListBox CartListBox;
+        private SplitContainer splitContainer15;
+        private SplitContainer splitContainer16;
+        private SplitContainer splitContainer17;
+        private Label label1;
+        private CheckedListBox DiscountsCheckedListBox;
+        private SplitContainer splitContainer18;
+        private Label label2;
+        private Label DiscountAmountLabel;
+        private SplitContainer splitContainer19;
+        private Label label4;
+        private Label TotalLabel;
     }
 }

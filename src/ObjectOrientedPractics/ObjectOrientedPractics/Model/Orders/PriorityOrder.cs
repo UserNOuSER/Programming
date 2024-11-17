@@ -65,7 +65,8 @@
         /// <param name="wantedTime">Желаемое время</param>
         /// <param name="address">Адрес</param>
         /// <param name="items">Товары в заказе</param>
-        public PriorityOrder(DateTime wantedDate, string wantedTime, Address address, List<Item> items) : base(address, items)
+        /// <param name="discountAmount">Сумма скидок</param>
+        public PriorityOrder(DateTime wantedDate, string wantedTime, Address address, List<Item> items, double discountAmount) : base(address, items, discountAmount)
         {
             WantedDate = wantedDate;
             WantedTime = wantedTime;

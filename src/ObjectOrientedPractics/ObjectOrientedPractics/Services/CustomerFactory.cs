@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using ObjectOrientedPractics.Model;
+
 namespace ObjectOrientedPractics.Services
 {
     /// <summary>

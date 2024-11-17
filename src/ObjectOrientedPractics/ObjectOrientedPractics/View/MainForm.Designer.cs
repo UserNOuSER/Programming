@@ -150,10 +150,10 @@ namespace ObjectOrientedPractics.View
             // PriorityOrderTab
             // 
             PriorityOrderTab.Controls.Add(priorityOrdersTab1);
-            PriorityOrderTab.Location = new Point(4, 25);
+            PriorityOrderTab.Location = new Point(4, 29);
             PriorityOrderTab.Name = "PriorityOrderTab";
             PriorityOrderTab.Padding = new Padding(3);
-            PriorityOrderTab.Size = new Size(1071, 550);
+            PriorityOrderTab.Size = new Size(1071, 546);
             PriorityOrderTab.TabIndex = 4;
             PriorityOrderTab.Text = "Priority Order Tab";
             PriorityOrderTab.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@ namespace ObjectOrientedPractics.View
             priorityOrdersTab1.Dock = DockStyle.Fill;
             priorityOrdersTab1.Location = new Point(3, 3);
             priorityOrdersTab1.Name = "priorityOrdersTab1";
-            priorityOrdersTab1.Size = new Size(1065, 544);
+            priorityOrdersTab1.Size = new Size(1065, 540);
             priorityOrdersTab1.TabIndex = 0;
             // 
             // MainForm
@@ -175,7 +175,7 @@ namespace ObjectOrientedPractics.View
             Font = new Font("Bahnschrift SemiCondensed", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2, 3, 2, 3);
-            MinimumSize = new Size(700, 533);
+            MinimumSize = new Size(1097, 626);
             Name = "MainForm";
             Text = "Object Oriented Practics";
             tabControl1.ResumeLayout(false);

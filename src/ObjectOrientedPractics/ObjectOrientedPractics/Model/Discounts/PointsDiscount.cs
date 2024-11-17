@@ -26,7 +26,6 @@
         public string Info
         {
             get { return $"Накопительная – {Points} баллов"; }
-
         }
         /// <summary>
         /// Создает пустой экземпляр класса
@@ -47,11 +46,11 @@
             {
                 amounts += item.Cost;
             }
-            if (amounts * 0.3 >= Points)
+            if (amounts * 0.3 > Points)
             {
                 return Points;
             }
-            return amounts;
+            return amounts * 0.3;
         }
         /// <summary>
         /// Применяет скидку(вычитает баллы из имеющихся)
@@ -61,7 +60,14 @@
         public double Apply(List<Item> items)
         {
             double discount = Calculate(items);
-            _points -= discount;
+            if (Points - discount < 0)
+            {
+                Points = 0;
+            }
+            else
+            {
+                Points = (int)(Points - discount);
+            }
             return discount;
         }
         /// <summary>

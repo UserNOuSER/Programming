@@ -65,8 +65,12 @@ namespace ObjectOrientedPractics.View.Tabs
             splitContainer9 = new SplitContainer();
             OrdersListBox = new ListBox();
             splitContainer10 = new SplitContainer();
+            splitContainer21 = new SplitContainer();
             label7 = new Label();
             AmountNumberLabel = new Label();
+            splitContainer20 = new SplitContainer();
+            label9 = new Label();
+            TotalLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -142,6 +146,14 @@ namespace ObjectOrientedPractics.View.Tabs
             splitContainer10.Panel1.SuspendLayout();
             splitContainer10.Panel2.SuspendLayout();
             splitContainer10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer21).BeginInit();
+            splitContainer21.Panel1.SuspendLayout();
+            splitContainer21.Panel2.SuspendLayout();
+            splitContainer21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer20).BeginInit();
+            splitContainer20.Panel1.SuspendLayout();
+            splitContainer20.Panel2.SuspendLayout();
+            splitContainer20.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -541,7 +553,6 @@ namespace ObjectOrientedPractics.View.Tabs
             // splitContainer7
             // 
             splitContainer7.Dock = DockStyle.Fill;
-            splitContainer7.IsSplitterFixed = true;
             splitContainer7.Location = new Point(0, 0);
             splitContainer7.Name = "splitContainer7";
             splitContainer7.Orientation = Orientation.Horizontal;
@@ -549,12 +560,13 @@ namespace ObjectOrientedPractics.View.Tabs
             // splitContainer7.Panel1
             // 
             splitContainer7.Panel1.Controls.Add(addressControl1);
+            splitContainer7.Panel1MinSize = 200;
             // 
             // splitContainer7.Panel2
             // 
             splitContainer7.Panel2.Controls.Add(splitContainer8);
             splitContainer7.Size = new Size(586, 508);
-            splitContainer7.SplitterDistance = 241;
+            splitContainer7.SplitterDistance = 200;
             splitContainer7.TabIndex = 0;
             // 
             // addressControl1
@@ -564,7 +576,7 @@ namespace ObjectOrientedPractics.View.Tabs
             addressControl1.Margin = new Padding(3, 4, 3, 4);
             addressControl1.MinimumSize = new Size(0, 200);
             addressControl1.Name = "addressControl1";
-            addressControl1.Size = new Size(586, 241);
+            addressControl1.Size = new Size(586, 200);
             addressControl1.TabIndex = 0;
             // 
             // splitContainer8
@@ -582,8 +594,8 @@ namespace ObjectOrientedPractics.View.Tabs
             // splitContainer8.Panel2
             // 
             splitContainer8.Panel2.Controls.Add(splitContainer9);
-            splitContainer8.Size = new Size(586, 263);
-            splitContainer8.SplitterDistance = 29;
+            splitContainer8.Size = new Size(586, 304);
+            splitContainer8.SplitterDistance = 33;
             splitContainer8.TabIndex = 0;
             // 
             // label6
@@ -600,7 +612,6 @@ namespace ObjectOrientedPractics.View.Tabs
             // splitContainer9
             // 
             splitContainer9.Dock = DockStyle.Fill;
-            splitContainer9.IsSplitterFixed = true;
             splitContainer9.Location = new Point(0, 0);
             splitContainer9.Name = "splitContainer9";
             splitContainer9.Orientation = Orientation.Horizontal;
@@ -612,8 +623,8 @@ namespace ObjectOrientedPractics.View.Tabs
             // splitContainer9.Panel2
             // 
             splitContainer9.Panel2.Controls.Add(splitContainer10);
-            splitContainer9.Size = new Size(586, 230);
-            splitContainer9.SplitterDistance = 150;
+            splitContainer9.Size = new Size(586, 267);
+            splitContainer9.SplitterDistance = 163;
             splitContainer9.TabIndex = 0;
             // 
             // OrdersListBox
@@ -622,27 +633,43 @@ namespace ObjectOrientedPractics.View.Tabs
             OrdersListBox.FormattingEnabled = true;
             OrdersListBox.Location = new Point(0, 0);
             OrdersListBox.Name = "OrdersListBox";
-            OrdersListBox.Size = new Size(586, 150);
+            OrdersListBox.Size = new Size(586, 163);
             OrdersListBox.TabIndex = 0;
             // 
             // splitContainer10
             // 
             splitContainer10.Dock = DockStyle.Fill;
-            splitContainer10.IsSplitterFixed = true;
             splitContainer10.Location = new Point(0, 0);
             splitContainer10.Name = "splitContainer10";
             splitContainer10.Orientation = Orientation.Horizontal;
             // 
             // splitContainer10.Panel1
             // 
-            splitContainer10.Panel1.Controls.Add(label7);
+            splitContainer10.Panel1.Controls.Add(splitContainer21);
             // 
             // splitContainer10.Panel2
             // 
-            splitContainer10.Panel2.Controls.Add(AmountNumberLabel);
-            splitContainer10.Size = new Size(586, 76);
-            splitContainer10.SplitterDistance = 25;
+            splitContainer10.Panel2.Controls.Add(splitContainer20);
+            splitContainer10.Size = new Size(586, 100);
+            splitContainer10.SplitterDistance = 46;
             splitContainer10.TabIndex = 0;
+            // 
+            // splitContainer21
+            // 
+            splitContainer21.Dock = DockStyle.Fill;
+            splitContainer21.Location = new Point(0, 0);
+            splitContainer21.Name = "splitContainer21";
+            // 
+            // splitContainer21.Panel1
+            // 
+            splitContainer21.Panel1.Controls.Add(label7);
+            // 
+            // splitContainer21.Panel2
+            // 
+            splitContainer21.Panel2.Controls.Add(AmountNumberLabel);
+            splitContainer21.Size = new Size(586, 46);
+            splitContainer21.SplitterDistance = 289;
+            splitContainer21.TabIndex = 0;
             // 
             // label7
             // 
@@ -657,14 +684,53 @@ namespace ObjectOrientedPractics.View.Tabs
             // 
             // AmountNumberLabel
             // 
-            AmountNumberLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             AmountNumberLabel.AutoSize = true;
+            AmountNumberLabel.Dock = DockStyle.Fill;
             AmountNumberLabel.Font = new Font("Bahnschrift Condensed", 20F);
-            AmountNumberLabel.Location = new Point(508, 0);
+            AmountNumberLabel.Location = new Point(0, 0);
             AmountNumberLabel.Name = "AmountNumberLabel";
             AmountNumberLabel.Size = new Size(32, 41);
             AmountNumberLabel.TabIndex = 0;
             AmountNumberLabel.Text = "0";
+            // 
+            // splitContainer20
+            // 
+            splitContainer20.Dock = DockStyle.Fill;
+            splitContainer20.Location = new Point(0, 0);
+            splitContainer20.Name = "splitContainer20";
+            // 
+            // splitContainer20.Panel1
+            // 
+            splitContainer20.Panel1.Controls.Add(label9);
+            // 
+            // splitContainer20.Panel2
+            // 
+            splitContainer20.Panel2.Controls.Add(TotalLabel);
+            splitContainer20.Size = new Size(586, 50);
+            splitContainer20.SplitterDistance = 289;
+            splitContainer20.TabIndex = 0;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Dock = DockStyle.Fill;
+            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label9.Location = new Point(0, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(48, 20);
+            label9.TabIndex = 0;
+            label9.Text = "Total:";
+            // 
+            // TotalLabel
+            // 
+            TotalLabel.AutoSize = true;
+            TotalLabel.Dock = DockStyle.Fill;
+            TotalLabel.Font = new Font("Bahnschrift Condensed", 20F);
+            TotalLabel.Location = new Point(0, 0);
+            TotalLabel.Name = "TotalLabel";
+            TotalLabel.Size = new Size(32, 41);
+            TotalLabel.TabIndex = 1;
+            TotalLabel.Text = "0";
             // 
             // OrdersTab
             // 
@@ -756,11 +822,21 @@ namespace ObjectOrientedPractics.View.Tabs
             ((System.ComponentModel.ISupportInitialize)splitContainer9).EndInit();
             splitContainer9.ResumeLayout(false);
             splitContainer10.Panel1.ResumeLayout(false);
-            splitContainer10.Panel1.PerformLayout();
             splitContainer10.Panel2.ResumeLayout(false);
-            splitContainer10.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer10).EndInit();
             splitContainer10.ResumeLayout(false);
+            splitContainer21.Panel1.ResumeLayout(false);
+            splitContainer21.Panel1.PerformLayout();
+            splitContainer21.Panel2.ResumeLayout(false);
+            splitContainer21.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer21).EndInit();
+            splitContainer21.ResumeLayout(false);
+            splitContainer20.Panel1.ResumeLayout(false);
+            splitContainer20.Panel1.PerformLayout();
+            splitContainer20.Panel2.ResumeLayout(false);
+            splitContainer20.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer20).EndInit();
+            splitContainer20.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -804,5 +880,9 @@ namespace ObjectOrientedPractics.View.Tabs
         private SplitContainer splitContainer19;
         private Label label2;
         private ComboBox TimeComboBox;
+        private SplitContainer splitContainer20;
+        private SplitContainer splitContainer21;
+        private Label TotalLabel;
+        private Label label9;
     }
 }

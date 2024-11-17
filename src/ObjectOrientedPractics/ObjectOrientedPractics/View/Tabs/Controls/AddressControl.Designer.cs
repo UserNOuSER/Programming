@@ -109,8 +109,8 @@
             // splitContainer4.Panel2
             // 
             splitContainer4.Panel2.Controls.Add(splitContainer6);
-            splitContainer4.Size = new Size(616, 116);
-            splitContainer4.SplitterDistance = 57;
+            splitContainer4.Size = new Size(607, 65);
+            splitContainer4.SplitterDistance = 31;
             splitContainer4.TabIndex = 8;
             // 
             // StreetTextBox
@@ -118,7 +118,7 @@
             StreetTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             StreetTextBox.Location = new Point(57, -1);
             StreetTextBox.Name = "StreetTextBox";
-            StreetTextBox.Size = new Size(556, 27);
+            StreetTextBox.Size = new Size(547, 27);
             StreetTextBox.TabIndex = 7;
             // 
             // label4
@@ -143,8 +143,8 @@
             // splitContainer6.Panel2
             // 
             splitContainer6.Panel2.Controls.Add(splitContainer10);
-            splitContainer6.Size = new Size(616, 55);
-            splitContainer6.SplitterDistance = 205;
+            splitContainer6.Size = new Size(607, 30);
+            splitContainer6.SplitterDistance = 202;
             splitContainer6.TabIndex = 14;
             // 
             // splitContainer9
@@ -160,8 +160,8 @@
             // splitContainer9.Panel2
             // 
             splitContainer9.Panel2.Controls.Add(BuildingTextBox);
-            splitContainer9.Size = new Size(205, 55);
-            splitContainer9.SplitterDistance = 68;
+            splitContainer9.Size = new Size(202, 30);
+            splitContainer9.SplitterDistance = 67;
             splitContainer9.TabIndex = 11;
             // 
             // label7
@@ -179,7 +179,7 @@
             BuildingTextBox.Dock = DockStyle.Fill;
             BuildingTextBox.Location = new Point(0, 0);
             BuildingTextBox.Name = "BuildingTextBox";
-            BuildingTextBox.Size = new Size(133, 27);
+            BuildingTextBox.Size = new Size(131, 27);
             BuildingTextBox.TabIndex = 8;
             // 
             // splitContainer10
@@ -195,8 +195,8 @@
             // splitContainer10.Panel2
             // 
             splitContainer10.Panel2.Controls.Add(ApartmentTextBox);
-            splitContainer10.Size = new Size(407, 55);
-            splitContainer10.SplitterDistance = 135;
+            splitContainer10.Size = new Size(401, 30);
+            splitContainer10.SplitterDistance = 133;
             splitContainer10.TabIndex = 13;
             // 
             // label8
@@ -213,7 +213,7 @@
             ApartmentTextBox.Dock = DockStyle.Fill;
             ApartmentTextBox.Location = new Point(0, 0);
             ApartmentTextBox.Name = "ApartmentTextBox";
-            ApartmentTextBox.Size = new Size(268, 27);
+            ApartmentTextBox.Size = new Size(264, 27);
             ApartmentTextBox.TabIndex = 12;
             // 
             // label1
@@ -262,7 +262,7 @@
             CountryTextBox.Dock = DockStyle.Fill;
             CountryTextBox.Location = new Point(0, 0);
             CountryTextBox.Name = "CountryTextBox";
-            CountryTextBox.Size = new Size(133, 27);
+            CountryTextBox.Size = new Size(131, 27);
             CountryTextBox.TabIndex = 4;
             // 
             // label5
@@ -288,7 +288,7 @@
             CityTextBox.Dock = DockStyle.Fill;
             CityTextBox.Location = new Point(0, 0);
             CityTextBox.Name = "CityTextBox";
-            CityTextBox.Size = new Size(268, 27);
+            CityTextBox.Size = new Size(264, 27);
             CityTextBox.TabIndex = 13;
             // 
             // splitContainer1
@@ -305,8 +305,8 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(616, 269);
-            splitContainer1.SplitterDistance = 39;
+            splitContainer1.Size = new Size(607, 160);
+            splitContainer1.SplitterDistance = 25;
             splitContainer1.TabIndex = 14;
             // 
             // splitContainer2
@@ -324,8 +324,8 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(splitContainer3);
-            splitContainer2.Size = new Size(616, 226);
-            splitContainer2.SplitterDistance = 42;
+            splitContainer2.Size = new Size(607, 131);
+            splitContainer2.SplitterDistance = 25;
             splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -342,8 +342,8 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(splitContainer4);
-            splitContainer3.Size = new Size(616, 180);
-            splitContainer3.SplitterDistance = 60;
+            splitContainer3.Size = new Size(607, 102);
+            splitContainer3.SplitterDistance = 33;
             splitContainer3.TabIndex = 14;
             // 
             // splitContainer5
@@ -359,8 +359,8 @@
             // splitContainer5.Panel2
             // 
             splitContainer5.Panel2.Controls.Add(splitContainer8);
-            splitContainer5.Size = new Size(616, 60);
-            splitContainer5.SplitterDistance = 205;
+            splitContainer5.Size = new Size(607, 33);
+            splitContainer5.SplitterDistance = 202;
             splitContainer5.TabIndex = 14;
             // 
             // splitContainer7
@@ -376,8 +376,8 @@
             // splitContainer7.Panel2
             // 
             splitContainer7.Panel2.Controls.Add(CountryTextBox);
-            splitContainer7.Size = new Size(205, 60);
-            splitContainer7.SplitterDistance = 68;
+            splitContainer7.Size = new Size(202, 33);
+            splitContainer7.SplitterDistance = 67;
             splitContainer7.TabIndex = 5;
             // 
             // splitContainer8
@@ -393,8 +393,8 @@
             // splitContainer8.Panel2
             // 
             splitContainer8.Panel2.Controls.Add(CityTextBox);
-            splitContainer8.Size = new Size(407, 60);
-            splitContainer8.SplitterDistance = 135;
+            splitContainer8.Size = new Size(401, 33);
+            splitContainer8.SplitterDistance = 133;
             splitContainer8.TabIndex = 14;
             // 
             // AddressControl
@@ -404,9 +404,9 @@
             Controls.Add(label5);
             Controls.Add(splitContainer1);
             Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(0, 200);
+            MinimumSize = new Size(0, 160);
             Name = "AddressControl";
-            Size = new Size(616, 269);
+            Size = new Size(607, 160);
             splitContainer4.Panel1.ResumeLayout(false);
             splitContainer4.Panel1.PerformLayout();
             splitContainer4.Panel2.ResumeLayout(false);

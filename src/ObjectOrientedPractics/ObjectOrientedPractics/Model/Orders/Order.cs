@@ -30,6 +30,11 @@ namespace ObjectOrientedPractics.Model.Orders
         /// </summary>
         private OrderStatus _orderStatus;
         /// <summary>
+        /// Сумма скидки
+        /// </summary>
+        private double _discountAmount;
+
+        /// <summary>
         /// Возвращает уникальный идентификатор
         /// </summary>
         public int Id
@@ -78,9 +83,16 @@ namespace ObjectOrientedPractics.Model.Orders
             set { _items = value; }
         }
         /// <summary>
-        /// 
+        /// Возвращает и задает сумму скидки
         /// </summary>
-        public double DiscountAmount { get; set; }
+        public double DiscountAmount 
+        {
+            get { return _discountAmount; }
+            set { _discountAmount = value; }
+        }
+        /// <summary>
+        /// Возвращает итоговую стоимость заказа
+        /// </summary>
         public double Total
         {
             get { return Amount - DiscountAmount; }
@@ -103,19 +115,22 @@ namespace ObjectOrientedPractics.Model.Orders
             _dateTime = DateTime.Now;
             _address = new();
             _orderStatus = OrderStatus.New;
+            _discountAmount = 0.0;
         }
         /// <summary>
         /// Создает экземпляр класса <see cref="Order"/>.
         /// </summary>
         /// <param name="address">Адрес заказа</param>
         /// <param name="items">Список товаров в заказе</param>
-        public Order(Address address, List<Item> items)
+        /// <param name="discountAmount">Сумма скидок</param>
+        public Order(Address address, List<Item> items, double discountAmount)
         {
             _id = IDGenerator.GetNextId();
             _dateTime = DateTime.Now;
             Address = address;
             Items = items;
             _orderStatus = OrderStatus.New;
+            DiscountAmount = discountAmount; 
         }
     }
 }

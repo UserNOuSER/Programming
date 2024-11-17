@@ -75,31 +75,19 @@ namespace ObjectOrientedPractics.Model.Discounts
             {
                 if (item.Category == Category)
                 {
-                    amounts += item.Cost * Percent;
+                    amounts += item.Cost * Percent / 100.0;
                 }
             }
             return amounts;
         }
         /// <summary>
-        /// Возвращает сумму товара с примененной скидкой
+        /// Возвращает сумму скидки(внезапно то же самое что и Calculate, интерфейс ради интерфейса)
         /// </summary>
         /// <param name="items"></param>
         /// <returns></returns>
         public double Apply(List<Item> items)
         {
-            double amounts = 0.0;
-            foreach (Item item in items)
-            {
-                if (item.Category == Category)
-                {
-                    amounts += item.Cost * (100 - Percent) / 100;
-                }
-                else
-                {
-                    amounts += item.Cost;
-                }
-            }
-            return amounts;
+            return Calculate(items);
         }
         /// <summary>
         /// Обновление процента скидки
@@ -119,7 +107,7 @@ namespace ObjectOrientedPractics.Model.Discounts
             {
                 _percent = 10;
             }
-            else
+            else if (Total > 0.0)
             {
                 _percent = (int)Math.Ceiling(Total / 1000);
             }

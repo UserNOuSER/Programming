@@ -3,7 +3,6 @@ using ObjectOrientedPractics.Model.Discounts;
 using ObjectOrientedPractics.Model.Enums;
 using ObjectOrientedPractics.Services;
 using ObjectOrientedPractics.View.Forms;
-using System.Linq;
 
 namespace ObjectOrientedPractics.View.Tabs
 {

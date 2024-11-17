@@ -44,6 +44,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 OrderStatusComboBox.Text = string.Empty;
                 addressControl1.Address = new Address();
                 AmountNumberLabel.Text = string.Empty;
+                TotalLabel.Text = string.Empty;
             }
             else
             {
@@ -63,6 +64,7 @@ namespace ObjectOrientedPractics.View.Tabs
                 addressControl1.Address = order.Address;
                 OrdersListBox.DataSource = order.Items;
                 AmountNumberLabel.Text = order.Amount.ToString();
+                TotalLabel.Text = order.Total.ToString();
             }
         }
         private void OrderStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -93,6 +95,7 @@ namespace ObjectOrientedPractics.View.Tabs
             dataTable.Columns.Add("Date", typeof(DateTime));
             dataTable.Columns.Add("Amount", typeof(double));
             dataTable.Columns.Add("CustomerName", typeof(string));
+            dataTable.Columns.Add("Total", typeof(double));
 
             foreach (var customer in _customers)
             {
@@ -106,6 +109,7 @@ namespace ObjectOrientedPractics.View.Tabs
                     row["Date"] = order.DateTime;
                     row["Amount"] = order.Amount;
                     row["CustomerName"] = customer.Fullname;
+                    row["Total"] = order.Total;
                     dataTable.Rows.Add(row);
                 }
             }
