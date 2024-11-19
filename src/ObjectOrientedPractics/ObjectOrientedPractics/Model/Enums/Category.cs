@@ -15,7 +15,7 @@
         Electronics,
         Gifts,
         Hobbies,
-        Boobs,
+        Boots,
         Sport,
         Chill,
         Kids

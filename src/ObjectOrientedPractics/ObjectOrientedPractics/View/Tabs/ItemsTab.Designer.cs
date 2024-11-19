@@ -44,6 +44,12 @@
             AddRandomButton = new Button();
             label1 = new Label();
             CategoryComboBox = new ComboBox();
+            label2 = new Label();
+            SearchTextBox = new TextBox();
+            label3 = new Label();
+            SortComboBox = new ComboBox();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // ItemsLabel1
@@ -60,15 +66,14 @@
             // 
             // ItemsListBox
             // 
-            ItemsListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ItemsListBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ItemsListBox.DataSource = ItemsListBox.CustomTabOffsets;
             ItemsListBox.FormattingEnabled = true;
-            ItemsListBox.Location = new Point(3, 32);
+            ItemsListBox.Location = new Point(3, 73);
             ItemsListBox.MaximumSize = new Size(261, 9999);
             ItemsListBox.MinimumSize = new Size(261, 4);
             ItemsListBox.Name = "ItemsListBox";
-            ItemsListBox.Size = new Size(261, 424);
-            ItemsListBox.Sorted = true;
+            ItemsListBox.Size = new Size(261, 344);
             ItemsListBox.TabIndex = 1;
             ItemsListBox.Click += ItemListBox_Click;
             ItemsListBox.SelectedIndexChanged += ItemListBox_SelectedIndexChanged;
@@ -216,10 +221,62 @@
             CategoryComboBox.Size = new Size(138, 28);
             CategoryComboBox.TabIndex = 15;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 40);
+            label2.Name = "label2";
+            label2.Size = new Size(44, 20);
+            label2.TabIndex = 16;
+            label2.Text = "Find: ";
+            // 
+            // SearchTextBox
+            // 
+            SearchTextBox.Location = new Point(53, 40);
+            SearchTextBox.Name = "SearchTextBox";
+            SearchTextBox.Size = new Size(211, 27);
+            SearchTextBox.TabIndex = 17;
+            SearchTextBox.TextChanged += SearchTextBox_TextChanged;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label3.AutoSize = true;
+            label3.Location = new Point(0, 6);
+            label3.Name = "label3";
+            label3.Size = new Size(70, 20);
+            label3.TabIndex = 18;
+            label3.Text = "Order By:";
+            // 
+            // SortComboBox
+            // 
+            SortComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SortComboBox.FormattingEnabled = true;
+            SortComboBox.Location = new Point(84, 3);
+            SortComboBox.MaximumSize = new Size(185, 0);
+            SortComboBox.Name = "SortComboBox";
+            SortComboBox.Size = new Size(174, 28);
+            SortComboBox.TabIndex = 19;
+            SortComboBox.SelectedIndexChanged += SortComboBox_SelectedIndexChanged;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(SortComboBox);
+            panel1.Location = new Point(3, 423);
+            panel1.MaximumSize = new Size(261, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(261, 31);
+            panel1.TabIndex = 20;
+            // 
             // ItemsTab
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel1);
+            Controls.Add(SearchTextBox);
+            Controls.Add(label2);
             Controls.Add(CategoryComboBox);
             Controls.Add(label1);
             Controls.Add(AddRandomButton);
@@ -239,6 +296,8 @@
             Name = "ItemsTab";
             Size = new Size(709, 527);
             Load += ItemsTab_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -261,5 +320,10 @@
         private Button AddRandomButton;
         private Label label1;
         private ComboBox CategoryComboBox;
+        private Label label2;
+        private TextBox SearchTextBox;
+        private Label label3;
+        private ComboBox SortComboBox;
+        private Panel panel1;
     }
 }

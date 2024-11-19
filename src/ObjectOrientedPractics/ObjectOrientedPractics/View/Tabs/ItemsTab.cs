@@ -1,6 +1,7 @@
 ﻿using ObjectOrientedPractics.Model;
 using ObjectOrientedPractics.Model.Enums;
 using ObjectOrientedPractics.Services;
+using System.Drawing.Text;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
@@ -10,6 +11,10 @@ namespace ObjectOrientedPractics.View.Tabs
         /// Список для хранения товаров.
         /// </summary>
         private List<Item> _items = [];
+        /// <summary>
+        /// Список для хранения отсортированных + упорядоченныхх товаров
+        /// </summary>
+        private List<Item> _sortedItems = [];
         /// <summary>
         /// Текущий товар.
         /// </summary>
@@ -21,19 +26,19 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Создает и задает список для хранения товаров. Не должно быть null.
         /// </summary>
+
         public List<Item> Items
         {
-            get { return _items; } 
-            set 
+            get { return _items; }
+            set
             {
                 if (value == null)
                 {
                     throw new ArgumentNullException("Items не должно быть null");
                 }
-                _items = value; 
+                _items = value;
             }
         }
-
 
         public ItemsTab()
         {
@@ -45,6 +50,7 @@ namespace ObjectOrientedPractics.View.Tabs
             Items.Add(_currentItem);
             ItemsListBox.DataSource = Items;
             CategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
+            SortComboBox.DataSource = new List<string>(["Name (Descending)", "Cost (Ascending)", "Cost (Descending)", "Name (Ascending)"]);
         }
 
         private void ItemListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +71,8 @@ namespace ObjectOrientedPractics.View.Tabs
 
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = Items;
+
+            GetSortedItems();
         }
 
         private void ItemListBox_Click(object sender, EventArgs e)
@@ -115,23 +123,71 @@ namespace ObjectOrientedPractics.View.Tabs
 
             Item newItem = new();
             Items.Add(newItem);
-            ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = Items;
+
+            GetSortedItems();
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             Items.Remove(_currentItem);
-            ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = Items;
+            GetSortedItems();
         }
 
         private void AddRandomButton_Click(object sender, EventArgs e)
         {
             Item newItem = ItemFactory.GetItem();
             Items.Add(newItem);
-            ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = Items;
+            GetSortedItems();
         }
-    }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string query = SearchTextBox.Text;
+            _sortedItems = DataTools.GetWithCondition(Items, query, DataTools.ContainsSubstring);
+            if (_sortedItems.Count > 0)
+            {
+                ItemsListBox.DataSource = _sortedItems;
+            }
+            else
+            {
+                MessageBox.Show("Нет значений с таким содержанием",
+                    "Ошибъка",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            GetSortedItems();
+        }
+
+        private void SortComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetSortedItems();
+        }
+        /// <summary>
+        /// Сортировщик. Отправляет запросы делегатам на сортировку выбранным способом
+        /// </summary>
+        private void GetSortedItems()
+        {
+            if (SearchTextBox.Text == "")
+            {
+                _sortedItems = Items;
+            }
+            switch (SortComboBox.SelectedIndex)
+            {
+                case 0:
+                    _sortedItems = DataTools.SortBy(_sortedItems, false, DataTools.SortByName);
+                    break;
+                case 1:
+                    _sortedItems = DataTools.SortBy(_sortedItems, true, DataTools.SortByCost);
+                    break;
+                case 2:
+                    _sortedItems = DataTools.SortBy(_sortedItems, false, DataTools.SortByCost);
+                    break;
+                case 3:
+                    _sortedItems = DataTools.SortBy(_sortedItems, true, DataTools.SortByName);
+                    break;
+            }
+            ItemsListBox.DataSource = null;
+            ItemsListBox.DataSource = _sortedItems;
+        }
+
 }

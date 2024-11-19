@@ -146,7 +146,7 @@ namespace ObjectOrientedPractics.Model
         {
             if (other != null)
             {
-                return this.Cost.CompareTo(other.Cost);
+                return this.Name.CompareTo(other.Name);
             }
             return 0;
         }
