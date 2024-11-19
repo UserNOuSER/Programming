@@ -20,7 +20,18 @@ namespace ObjectOrientedPractics.View
             cartsTab1.Customers = _store.Customers;
             ordersTab1.Customers = _store.Customers;
             equalTab1.Customers = _store.Customers;
+            itemsTab.ItemsChanged += ItemsTab_ItemsChanged;
         }
+
+        private void ItemsTab_ItemsChanged(object? sender, EventArgs e)
+        {
+            cartsTab1.RefreshData();
+            ordersTab1.RefreshData();
+            priorityOrdersTab1.UpdateInfo();
+            equalCompareWindow1.UpdateInfo();
+            equalTab1.RefreshData();
+        }
+
         /// <summary>
         /// Обновление параметров при смене окон
         /// </summary>

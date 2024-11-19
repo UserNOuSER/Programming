@@ -8,6 +8,10 @@ namespace ObjectOrientedPractics.View.Tabs
     public partial class ItemsTab : UserControl
     {
         /// <summary>
+        /// Событие при изменении списка товаров
+        /// </summary>
+        public event EventHandler<EventArgs> ItemsChanged;
+        /// <summary>
         /// Список для хранения товаров.
         /// </summary>
         private List<Item> _items = [];
@@ -125,12 +129,14 @@ namespace ObjectOrientedPractics.View.Tabs
             Items.Add(newItem);
 
             GetSortedItems();
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             Items.Remove(_currentItem);
             GetSortedItems();
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void AddRandomButton_Click(object sender, EventArgs e)
@@ -138,6 +144,7 @@ namespace ObjectOrientedPractics.View.Tabs
             Item newItem = ItemFactory.GetItem();
             Items.Add(newItem);
             GetSortedItems();
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
@@ -189,5 +196,5 @@ namespace ObjectOrientedPractics.View.Tabs
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _sortedItems;
         }
-
+    }
 }

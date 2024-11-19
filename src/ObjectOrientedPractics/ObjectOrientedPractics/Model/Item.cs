@@ -8,6 +8,20 @@ namespace ObjectOrientedPractics.Model
     /// </summary>
     public class Item : ICloneable, IEquatable<Item>, IComparable<Item>
     {
+
+        public delegate void ItemEvent();
+        /// <summary>
+        /// Событие при смене стоимости товара
+        /// </summary>
+        public event EventHandler<EventArgs> CostChanged;
+        /// <summary>
+        /// Событие при смене названия товара
+        /// </summary>
+        public event EventHandler<EventArgs> NameChanged;
+        /// <summary>
+        /// Событие при смене описания товара
+        /// </summary>
+        public event EventHandler<EventArgs> InfoChanged;
         /// <summary>
         /// Уникальный идентификатор для всех объектов данного класса.
         /// </summary>
@@ -45,7 +59,11 @@ namespace ObjectOrientedPractics.Model
             {
                 ValueValidator.AssertStringOnLenght(value, 200, nameof(Name));
                 ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Name));
-                _name = value;
+                if (_name != value)
+                {
+                    _name = value;
+                    NameChanged(nameof(Name), EventArgs.Empty);
+                }
             }
         }
         /// <summary>
@@ -58,7 +76,11 @@ namespace ObjectOrientedPractics.Model
             {
                 ValueValidator.AssertStringOnLenght(value, 1000, nameof(Info));
                 ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Info));
-                _info = value;
+                if (_info != value)
+                {
+                    _info = value;
+                    InfoChanged(nameof(Info), EventArgs.Empty);
+                }
             }
         }
         /// <summary>
@@ -71,7 +93,11 @@ namespace ObjectOrientedPractics.Model
             {
                 ArgumentOutOfRangeException.ThrowIfNegative(value);
                 ArgumentOutOfRangeException.ThrowIfGreaterThan(value, 100000);
-                _cost = value;
+                if (_cost != value)
+                {
+                    _cost = value;
+                    CostChanged(nameof(Cost), EventArgs.Empty);
+                }
             }
         }
         /// <summary>
@@ -82,6 +108,7 @@ namespace ObjectOrientedPractics.Model
         /// <param name="Cost">Цена товара. По умолчанию - 0.</param>
         /// <param name="_id">Уникальный идентификатор. Класс не контролирует уникальность присвоенного id.</param>
         /// <param name="Category">Категория товара. По умолчанию - Acsessories.</param>
+        
         public Item()
         {
             _id = IDGenerator.GetNextId();
