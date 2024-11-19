@@ -552,6 +552,7 @@ namespace ObjectOrientedPractics.View.Tabs
             DiscountsListBox.Location = new Point(0, 0);
             DiscountsListBox.Name = "DiscountsListBox";
             DiscountsListBox.Size = new Size(338, 119);
+            DiscountsListBox.Sorted = true;
             DiscountsListBox.TabIndex = 0;
             // 
             // splitContainer16

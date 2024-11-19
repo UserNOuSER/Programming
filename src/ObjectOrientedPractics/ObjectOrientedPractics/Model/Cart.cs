@@ -1,6 +1,6 @@
 ﻿namespace ObjectOrientedPractics.Model
 {
-    public class Cart
+    public class Cart : ICloneable
     {
         /// <summary>
         /// Список товаров в корзине
@@ -52,6 +52,14 @@
         public Cart(List<Item> items)
         {
             Items = items;
+        }
+        /// <summary>
+        /// Клонирует корзину
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new Cart(Items);
         }
     }
 }

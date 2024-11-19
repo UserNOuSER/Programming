@@ -1,5 +1,4 @@
 using ObjectOrientedPractics.Model;
-using ObjectOrientedPractics.View.Tabs;
 
 namespace ObjectOrientedPractics.View
 {
@@ -15,10 +14,12 @@ namespace ObjectOrientedPractics.View
             itemsTab.Items = _store.Items;
             cartsTab1.Items = _store.Items;
             priorityOrdersTab1.Items = _store.Items;
+            equalCompareWindow1.Items = _store.Items;
 
             customersTab.Customers = _store.Customers;
             cartsTab1.Customers = _store.Customers;
             ordersTab1.Customers = _store.Customers;
+            equalTab1.Customers = _store.Customers;
         }
         /// <summary>
         /// Обновление параметров при смене окон
@@ -34,8 +35,15 @@ namespace ObjectOrientedPractics.View
                     ordersTab1.RefreshData();
                     break;
                 case 4:
-                    priorityOrdersTab1.UpdateInfo(); 
+                    priorityOrdersTab1.UpdateInfo();
                     break;
+                case 5:
+                    equalCompareWindow1.UpdateInfo();
+                    break;
+                case 7:
+                    equalTab1.RefreshData();
+                    break;
+
             }
         }
     }

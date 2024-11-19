@@ -2,7 +2,7 @@
 
 namespace ObjectOrientedPractics.Model
 {
-    public class Address
+    public class Address : ICloneable, IEquatable<Address>
     {
         /// <summary>
         /// Почтовый индекс.
@@ -149,6 +149,36 @@ namespace ObjectOrientedPractics.Model
         public override string ToString()
         {
             return $"{Index} {Country} {City} {Street} {Building} {Apartment}";
+        }
+        /// <summary>
+        /// Клонирует адрес
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new Address(this.Index, this.Country, this.City, this.Street, this.Building, this.Apartment);
+        }
+        /// <summary>
+        /// Равны ли адреса
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Address? other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (object.ReferenceEquals(this, other))
+            {
+                return true;
+            }
+            return this.ToString() == other.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Address);
         }
     }
 }

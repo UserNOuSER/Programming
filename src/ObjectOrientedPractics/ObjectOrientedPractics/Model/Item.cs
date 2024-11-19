@@ -6,7 +6,7 @@ namespace ObjectOrientedPractics.Model
     /// <summary>
     /// Хранит данные о товаре.
     /// </summary>
-    public class Item
+    public class Item : ICloneable, IEquatable<Item>, IComparable<Item>
     {
         /// <summary>
         /// Уникальный идентификатор для всех объектов данного класса.
@@ -35,7 +35,6 @@ namespace ObjectOrientedPractics.Model
         /// Возвращает и задает категорию товара.
         /// </summary>
         public Category Category { get; set; }
-
         /// <summary>
         /// Возвращает и задает название товара. Должно быть непустым и короче 200 символов.
         /// </summary>
@@ -75,7 +74,6 @@ namespace ObjectOrientedPractics.Model
                 _cost = value;
             }
         }
-
         /// <summary>
         /// Создаёт пустой экземпляр класса <see cref="Item"/>.
         /// </summary>
@@ -113,6 +111,50 @@ namespace ObjectOrientedPractics.Model
         /// </summary>
         /// <returns>string</returns>
         public override string ToString() => _name;
+        /// <summary>
+        /// Клонирует товар
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new Item(this.Name, this.Info, this.Cost, this.Category);
+        }
+        /// <summary>
+        /// равны ли товары
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Item? other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (object.ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return this.Name == other.Name;
+        }
+        /// <summary>
+        /// Сравнивает товары по цене
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public int CompareTo(Item? other)
+        {
+            if (other != null)
+            {
+                return this.Cost.CompareTo(other.Cost);
+            }
+            return 0;
+        }
+        
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Item);
+        }
     }
 
 }

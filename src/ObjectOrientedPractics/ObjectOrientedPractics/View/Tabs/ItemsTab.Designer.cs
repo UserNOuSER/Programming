@@ -68,6 +68,7 @@
             ItemsListBox.MinimumSize = new Size(261, 4);
             ItemsListBox.Name = "ItemsListBox";
             ItemsListBox.Size = new Size(261, 424);
+            ItemsListBox.Sorted = true;
             ItemsListBox.TabIndex = 1;
             ItemsListBox.Click += ItemListBox_Click;
             ItemsListBox.SelectedIndexChanged += ItemListBox_SelectedIndexChanged;

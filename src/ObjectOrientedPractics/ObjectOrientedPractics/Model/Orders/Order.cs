@@ -3,7 +3,7 @@ using ObjectOrientedPractics.Services;
 
 namespace ObjectOrientedPractics.Model.Orders
 {
-    public class Order
+    public class Order : IEquatable<Order>
     {
         /// <summary>
         /// Уникальный идентификатор
@@ -131,6 +131,28 @@ namespace ObjectOrientedPractics.Model.Orders
             Items = items;
             _orderStatus = OrderStatus.New;
             DiscountAmount = discountAmount; 
+        }
+        /// <summary>
+        /// Равны ли адреса
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Order? other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (object.ReferenceEquals(this, other))
+            {
+                return true;
+            }
+            return this.Items == other.Items;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Order);
         }
     }
 }
